@@ -1,0 +1,40 @@
+:root {
+  --col-primary-cream: #fdfbf7;
+  --col-primary-pink: #fd9c8e;
+  --col-secondary-dark-pink: #eba192;
+  --col-secondary-light-pink: #f5c0b6;
+  --col-secondary-green: #98d504;
+  --col-text-dark-grey: #3d3d3d;
+  --col-text-grey: #707070;
+  --col-text-light-grey: #b8b8b8;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+}
+
+p,
+li,
+a {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lato", sans-serif;
+}/*# sourceMappingURL=style.css.map */

@@ -10,16 +10,27 @@ The designs were created to the following widths:
 
 ## Colors
 
-- Very Dark Gray: hsl(0, 0%, 17%)
-- Dark Gray: hsl(0, 0%, 59%)
+- Primary Background Colour: #fdfbf7
+- Primary Pink Colour: #fd9c8e
+
+- Secondary Pink Dark Colour: #eba192
+- Secondary Pink Light Colour: #f5c0b6
+- Secondary Green Colour: #98d504
+
+- Text Very Dark Gray Colour: #3d3d3d
+- Text Dark Gray Colour: #707070
+- Text Light Gray Colour: #b8b8b8
 
 ## Typography
 
 ### Body Copy
 
-- Font size (text input): 18px
+- Font size (text input): 16px
 
 ### Font
 
-- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
-- Weights: 400, 500, 700
+- Family: [Roboto](https://fonts.google.com/specimen/Roboto)
+- Weights: 300, 400, 700
+
+- Family: [Lato](https://fonts.google.com/specimen/Lato)
+- Weights: 400, 700
