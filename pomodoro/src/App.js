@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import HelloWorld from "./components/HelloWorld";
 
 import "../src/css/style.css";
+import HomePage from "./components/Home Page/HomePage";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <HelloWorld />
+      <div className="main">
+        <HomePage />
       </div>
     );
   }

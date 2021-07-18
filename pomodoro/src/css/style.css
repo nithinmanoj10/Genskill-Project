@@ -1,12 +1,13 @@
 :root {
-  --col-primary-cream: #fdfbf7;
-  --col-primary-pink: #fd9c8e;
+  --col-primary-cream: #fffbf1;
+  --col-primary-pink: #fc9686;
   --col-secondary-dark-pink: #eba192;
   --col-secondary-light-pink: #f5c0b6;
   --col-secondary-green: #98d504;
   --col-text-dark-grey: #3d3d3d;
   --col-text-grey: #707070;
   --col-text-light-grey: #b8b8b8;
+  --col-text-blue: #0167a1;
 }
 
 *,
@@ -17,8 +18,12 @@
   box-sizing: border-box;
 }
 
-html {
+body {
   overflow-x: hidden;
+}
+
+html {
+  scrollbar-width: thin;
 }
 
 body {
@@ -32,9 +37,114 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
-h1,
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+}
+
 h2,
 h3,
 h4 {
   font-family: "Lato", sans-serif;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.main {
+  background-color: var(--col-primary-cream);
+  height: 100vh;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--col-primary-cream);
+}
+
+.header {
+  background-color: #fffefd;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  width: 100%;
+}
+
+.mobile-navbar {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.mobile-navbar .logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 5px;
+}
+
+.mobile-navbar .app-name {
+  flex: 1;
+}
+
+.hero-box {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.hero-box .greeting {
+  color: var(--col-text-grey);
+  font-size: 1.4rem;
+}
+
+.hero-box .user-name {
+  color: var(--col-text-dark-grey);
+  font-size: 1.9rem;
+}
+
+.hero-box__image {
+  width: 350px;
+  margin: 25px 0 30px 0px;
+}
+
+.hero-box__description {
+  text-align: center;
+  color: var(--col-text-grey);
+  font-size: 0.9rem;
+  width: 30ch;
+  line-height: 1.5;
+}
+
+.hero-box__description .bold-text {
+  color: var(--col-text-dark-grey);
+  font-weight: 700;
+}
+
+.button {
+  display: inline-block;
+}
+
+.button--basic {
+  background-color: #fff;
+  padding: 15px 65px;
+  font-weight: 700;
+  color: var(--col-primary-pink);
+  border: 1px solid #e0e0e0;
+  border-radius: 100px;
+  margin-top: 30px;
+}
+
+.more-info {
+  font-size: 0.6rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.more-info .link--green {
+  color: var(--col-text-blue);
+}
+/*# sourceMappingURL=style.css.map */

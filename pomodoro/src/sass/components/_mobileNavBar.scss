@@ -1,0 +1,28 @@
+.header {
+  background-color: #fffefd;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  width: 100%;
+}
+
+.mobile-navbar {
+  display: flex;
+  align-items: center;
+
+  width: 95%;
+  margin: 0 auto;
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+  }
+
+  .app-name {
+    flex: 1;
+  }
+
+  .hamburger-menu {
+    &__icon {
+    }
+  }
+}

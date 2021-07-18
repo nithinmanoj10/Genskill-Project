@@ -34,3 +34,12 @@ The designs were created to the following widths:
 
 - Family: [Lato](https://fonts.google.com/specimen/Lato)
 - Weights: 400, 700
+
+- Family: [Pacifico](https://fonts.google.com/specimen/Pacifico)
+- Weights: 400, 700
+
+## Images
+
+- Tomato Logo: [Icons8](https://img.icons8.com/plasticine/100/000000/tomato.png)
+
+- Hamburger Menu Icon: [Icons8](https://img.icons8.com/material-outlined/24/000000/menu--v1.png)
