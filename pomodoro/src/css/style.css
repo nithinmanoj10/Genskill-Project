@@ -4,10 +4,14 @@
   --col-secondary-dark-pink: #eba192;
   --col-secondary-light-pink: #f5c0b6;
   --col-secondary-green: #98d504;
+  --col-secondary-light-green: #b5ec33;
+  --col-secondary-light-red: #e98b6f;
+  --col-secondary-dark-red: #e04616;
   --col-text-dark-grey: #3d3d3d;
   --col-text-grey: #707070;
   --col-text-light-grey: #b8b8b8;
   --col-text-blue: #0167a1;
+  --col-text-red: #e75e34;
 }
 
 *,
@@ -58,6 +62,14 @@ h4 {
 }
 
 .homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--col-primary-cream);
+}
+
+.timerpage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,6 +150,28 @@ h4 {
   margin-top: 30px;
 }
 
+.button--done {
+  background-color: var(--col-secondary-green);
+  color: #fff;
+  padding: 7px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  margin-top: 25px;
+}
+
+.button--done:hover, .button--done:active {
+  background-color: var(--col-secondary-light-green);
+}
+
+.button--cancel {
+  padding: 5px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--col-text-grey);
+  color: var(--col-text-dark-grey);
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+
 .more-info {
   font-size: 0.6rem;
   margin-top: 40px;
@@ -146,5 +180,55 @@ h4 {
 
 .more-info .link--green {
   color: var(--col-text-blue);
+}
+
+.current-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.current-task__heading {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.current-task__name {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--col-text-grey);
+  width: 18ch;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.timer__value {
+  font-family: "Rubik", sans-serif;
+  color: var(--col-text-red);
+  font-size: 4rem;
+}
+
+.timer__session {
+  color: var(--col-text-grey);
+}
+
+.control-button {
+  background-color: var(--col-text-red);
+  background-image: linear-gradient(to bottom right, var(--col-secondary-light-red), var(--col-secondary-dark-red));
+  display: flex;
+  padding: 20px;
+  border-radius: 100px;
+}
+
+.control-button__icon {
+  margin: auto;
+  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */

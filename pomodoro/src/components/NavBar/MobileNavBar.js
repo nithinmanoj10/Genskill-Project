@@ -5,11 +5,6 @@ export default class MobileNavBar extends Component {
     return (
       <header className="header">
         <div className="mobile-navbar">
-          <img
-            src="https://img.icons8.com/plasticine/100/000000/tomato.png"
-            alt="Tomato Pomodoro Logo"
-            className="logo"
-          />
           <h1 className="app-name">Pomodoro</h1>
           <a href="javascript:void(0)" className="hamburger-menu">
             <img

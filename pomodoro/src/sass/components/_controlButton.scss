@@ -1,0 +1,17 @@
+.control-button {
+  background-color: var(--col-text-red);
+  background-image: linear-gradient(
+    to bottom right,
+    var(--col-secondary-light-red),
+    var(--col-secondary-dark-red)
+  );
+  display: flex;
+
+  padding: 20px;
+  border-radius: 100px;
+
+  &__icon {
+    margin: auto;
+    width: 50px;
+  }
+}

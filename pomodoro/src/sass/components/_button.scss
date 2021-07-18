@@ -10,4 +10,27 @@
     border-radius: 100px;
     margin-top: 30px;
   }
+
+  &--done {
+    background-color: var(--col-secondary-green);
+    color: #fff;
+    padding: 7px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    margin-top: 25px;
+
+    &:hover,
+    &:active {
+      background-color: var(--col-secondary-light-green);
+    }
+  }
+
+  &--cancel {
+    padding: 5px 10px;
+    border-radius: 100px;
+    border: 1px solid var(--col-text-grey);
+    color: var(--col-text-dark-grey);
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
 }

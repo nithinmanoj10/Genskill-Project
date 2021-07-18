@@ -16,10 +16,15 @@ The designs were created to the following widths:
 - Secondary Pink Dark Colour: #eba192
 - Secondary Pink Light Colour: #f5c0b6
 - Secondary Green Colour: #98d504
+- Secondary Light Green Colour: #b5ec33
+- Secondary Light Red: #e98b6f
+- Secondary Dark Red: #e04616
 
 - Text Very Dark Gray Colour: #3d3d3d
 - Text Dark Gray Colour: #707070
 - Text Light Gray Colour: #b8b8b8
+- Text Blue Colour: #0167a1
+- Text Red Colour: #e75e34
 
 ## Typography
 
@@ -37,6 +42,9 @@ The designs were created to the following widths:
 
 - Family: [Pacifico](https://fonts.google.com/specimen/Pacifico)
 - Weights: 400, 700
+
+- Family: [Rubik](https://fonts.google.com/specimen/Rubik)
+- Weights: 700
 
 ## Images
 

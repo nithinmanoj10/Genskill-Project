@@ -1,0 +1,19 @@
+.current-task {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+
+  &__heading {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--col-text-grey);
+    width: 18ch;
+  }
+}
