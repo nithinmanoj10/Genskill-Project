@@ -10,7 +10,6 @@ export default class TimerPage extends Component {
   render() {
     return (
       <div className="timerpage">
-        <MobileNavBar />
         <CurrentTask />
         <DoneButton />
         <Timer />
