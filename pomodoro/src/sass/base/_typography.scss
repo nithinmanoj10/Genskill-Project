@@ -31,3 +31,18 @@ h4 {
 .app-name {
   font-family: "Pacifico", cursive;
 }
+
+.task-section {
+  h1 {
+    font-family: "Lato", sans-serif;
+  }
+}
+
+::placeholder {
+  color: var(--col-text-light-grey);
+  font-size: 0.8rem;
+}
+
+.task-create__form__description {
+  font-family: "Lato", sans-serif;
+}

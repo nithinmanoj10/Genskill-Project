@@ -1,6 +1,7 @@
 :root {
   --col-primary-cream: #fdf6e3;
   --col-primary-pink: #fc9686;
+  --col-primary-dark-pink: #fa8370;
   --col-primary-white: #fffefd;
   --col-secondary-dark-pink: #eba192;
   --col-secondary-light-pink: #f5c0b6;
@@ -13,7 +14,8 @@
   --col-text-light-grey: #b8b8b8;
   --col-text-blue: #0167a1;
   --col-text-red: #e75e34;
-  --col-border-grey: #d4d4d4;
+  --col-border-grey: #e6e6e6;
+  --col-button-blue: #0851fc;
 }
 
 *,
@@ -64,6 +66,19 @@ h4 {
 
 .app-name {
   font-family: "Pacifico", cursive;
+}
+
+.task-section h1 {
+  font-family: "Lato", sans-serif;
+}
+
+::placeholder {
+  color: var(--col-text-light-grey);
+  font-size: 0.8rem;
+}
+
+.task-create__form__description {
+  font-family: "Lato", sans-serif;
 }
 
 .main {
@@ -296,5 +311,88 @@ h4 {
 
 .task-nav-bar__list__item:not(.task-nav-bar__list__item:last-child) {
   border-right: 1px solid var(--col-border-grey);
+}
+
+.task-create {
+  background-color: var(--col-primary-white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 50px;
+}
+
+.task-create__heading {
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--col-border-grey);
+}
+
+.task-create__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.task-create__form__label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--col-text-dark-grey);
+  margin-bottom: 5px;
+}
+
+.task-create__form .input__text {
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1.5px solid var(--col-border-grey);
+  color: var(--col-text-grey);
+}
+
+.task-create__form .input__text:focus {
+  outline: none;
+  border: 1px solid var(--col-text-grey);
+}
+
+.task-create__form .input__button {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 10px;
+  background-color: var(--col-primary-pink);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: rgba(245, 193, 182, 0.2) 0px 20px 25px -5px, rgba(245, 193, 182, 0.1) 0px 10px 10px -5px;
+}
+
+.task-create__form .input__button:hover {
+  background-color: var(--col-primary-dark-pink);
+}
+
+.task-create__form__select {
+  margin-bottom: 20px;
+  background-color: var(--col-primary-white);
+  color: var(--col-text-dark-grey);
+  border: 1.5px solid var(--col-border-grey);
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+
+.task-create__form__description {
+  border: 1.5px solid var(--col-border-grey);
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+
+.task-section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.task-section .heading {
+  margin: 15px 0;
 }
 /*# sourceMappingURL=style.css.map */
