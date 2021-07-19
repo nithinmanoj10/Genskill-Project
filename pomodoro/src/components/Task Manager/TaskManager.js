@@ -6,19 +6,25 @@ import Tasks from "./Tasks";
 import CompletedTasks from "./CompletedTasks";
 import Tags from "./Tags";
 
-export default class TaskManager extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="task-manager">
-          <TaskNavBar />
-          <Switch>
-            <Route path="/taskmanager/" exact component={Tasks} />
-            <Route path="/taskmanager/completed" component={CompletedTasks} />
-            <Route path="/taskmanager/tags" component={Tags} />
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
+function TaskManager() {
+  return (
+    <Router>
+      <div className="task-manager">
+        <TaskNavBar />
+        <Switch>
+          <Route path="/taskmanager/" exact>
+            <Tasks />
+          </Route>
+          <Route path="/taskmanager/completed">
+            <CompletedTasks />
+          </Route>
+          <Route path="/taskmanager/tags">
+            <Tags />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
+
+export default TaskManager;

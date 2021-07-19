@@ -1,0 +1,88 @@
+.task-card {
+  background-color: var(--col-primary-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 15px;
+
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+
+  .task-info {
+    margin-bottom: 20px;
+
+    &__tag {
+      color: var(--col-text-light-grey);
+      font-size: 0.8rem;
+    }
+
+    &__name {
+      color: var(--col-text-dark-grey);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    &__desc {
+      color: var(--col-text-grey);
+      line-height: 1.4;
+    }
+  }
+
+  &__actions {
+    // border: 1px dashed rgb(236, 0, 0);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &__button {
+      border: none;
+      border-radius: 100px;
+      background-color: transparent;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:not(&:last-child) {
+        margin-right: 6px;
+      }
+
+      .task-icon {
+        &--done {
+          fill: #8be209;
+        }
+        &--delete {
+          fill: #f30000;
+        }
+      }
+    }
+  }
+
+  &__time {
+    grid-column: 1/-1;
+
+    display: grid;
+    grid-template-columns: 25px 1.4fr 25px repeat(2, 1fr);
+
+    padding-top: 20px;
+    border-top: 1px solid var(--col-border-grey);
+
+    .task-icon--time {
+      width: 20px;
+    }
+
+    .time-stat {
+      &__name {
+        font-size: 0.9rem;
+        margin-top: 3px;
+        color: var(--col-text-dark-grey);
+      }
+
+      &__value {
+        color: var(--col-text-grey);
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

@@ -6,6 +6,16 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-bottom: 50px;
 
+  &__header {
+    position: relative;
+    .close-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   &__heading {
     text-align: center;
     padding: 15px 0;
@@ -34,7 +44,7 @@
 
         &:focus {
           outline: none;
-          border: 1px solid var(--col-text-grey);
+          border: 1.5px solid var(--col-text-grey);
         }
       }
 
@@ -44,10 +54,12 @@
         margin: 0 auto;
         margin-top: 40px;
 
-        padding: 10px;
-        background-color: var(--col-primary-pink);
+        background-image: linear-gradient(
+          to bottom right,
+          var(--col-primary-light-pink),
+          var(--col-primary-dark-pink)
+        );
         border: none;
-        color: #fff;
         border-radius: 8px;
 
         box-shadow: rgba(245, 193, 182, 0.2) 0px 20px 25px -5px,
@@ -56,17 +68,25 @@
         &:hover {
           background-color: var(--col-primary-dark-pink);
         }
+
+        &__link {
+          padding: 10px;
+          color: #fff;
+          display: block;
+        }
       }
     }
 
     &__select {
       margin-bottom: 20px;
       background-color: var(--col-primary-white);
-      color: var(--col-text-dark-grey);
       border: 1.5px solid var(--col-border-grey);
       padding: 7px 10px;
       border-radius: 5px;
+      color: var(--col-text-grey);
       option {
+        color: var(--col-text-dark-grey);
+        background-color: #fff;
       }
     }
 
@@ -74,6 +94,11 @@
       border: 1.5px solid var(--col-border-grey);
       border-radius: 5px;
       padding: 7px 10px;
+
+      &:focus {
+        outline: none;
+        border: 1.5px solid var(--col-text-grey);
+      }
     }
   }
 }

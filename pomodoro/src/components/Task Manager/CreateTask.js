@@ -1,59 +1,117 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+import { Link } from "react-router-dom";
 
-export default class CreateTask extends Component {
-  render() {
-    return (
-      <div className="task-create">
+import CloseIcon from "@material-ui/icons/Close";
+
+function CreateTask({ inputTextHandle, tasks, submitTaskHandle }) {
+  const [taskTitle, setTaskTitle] = useState("");
+  const [taskTag, setTaskTag] = useState("");
+  const [taskEstimate, setTaskEstimate] = useState("");
+  const [taskDesc, setTaskDesc] = useState("");
+
+  const taskNameHandle = function (e) {
+    setTaskTitle(e.target.value);
+  };
+
+  const taskTagHandle = function (e) {
+    console.log(e.target);
+    setTaskTag(e.target.value);
+  };
+
+  const taskEstimateHandle = function (e) {
+    setTaskEstimate(e.target.value);
+  };
+
+  const taskDescHandle = function (e) {
+    setTaskDesc(e.target.value);
+  };
+
+  const taskSubmitHandle = function (e) {
+    e.preventDefault();
+
+    const obj = {};
+    obj.task_title = taskTitle;
+    obj.task_tag = taskTag;
+    obj.task_estimate = taskEstimate;
+    obj.task_desc = taskDesc;
+    obj.task_id = Math.random() * 100;
+
+    tasks.push(obj);
+    submitTaskHandle(tasks);
+  };
+
+  return (
+    <div className="task-create">
+      <header className="task-create__header">
         <h4 className="task-create__heading">Create Task</h4>
-        <form className="task-create__form">
-          <label htmlFor="ttitle" className="task-create__form__label">
-            Task Title
-          </label>
-          <input
-            type="text"
-            name="tasktitle"
-            id="ttitle"
-            placeholder="Your Task Title"
-            className="input__text"
-          />
-          <label htmlFor="ttag" className="task-create__form__label">
-            Tag
-          </label>
-          <select
-            name="tasktag"
-            id="ttag"
-            className="task-create__form__select"
-          >
-            <option value="react">React</option>
-            <option value="javascript">JavaScript</option>
-            <option value="css">CSS</option>
-          </select>
-          <label htmlFor="testimate" className="task-create__form__label">
-            Estimated Time to Complete
-          </label>
-          <input
-            type="text"
-            name="taskestimate"
-            id="testimate"
-            placeholder="Time in Minutes"
-            className="input__text"
-          />
+        <Link to="/taskmanager">
+          <CloseIcon className="close-icon" />
+        </Link>
+      </header>
 
-          <label htmlFor="tdescription" className="task-create__form__label">
-            Description
-          </label>
-          <textarea
-            name="taskdescription"
-            id="tdescription"
-            cols="35"
-            rows="4"
-            placeholder="Description for your Task..."
-            className="task-create__form__description"
-          ></textarea>
+      <form className="task-create__form">
+        <label htmlFor="ttitle" className="task-create__form__label">
+          Task Title
+        </label>
+        <input
+          type="text"
+          name="tasktitle"
+          id="ttitle"
+          placeholder="Your Task Title"
+          className="input__text"
+          onChange={taskNameHandle}
+        />
+        <label htmlFor="ttag" className="task-create__form__label">
+          Tag
+        </label>
+        <select
+          name="tasktag"
+          id="ttag"
+          className="task-create__form__select"
+          onChange={taskTagHandle}
+        >
+          <option value="" selected disabled hidden></option>
+          <option value="React">React</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="CSS">CSS</option>
+        </select>
+        <label htmlFor="testimate" className="task-create__form__label">
+          Estimated Time to Complete
+        </label>
+        <input
+          type="text"
+          name="taskestimate"
+          id="testimate"
+          placeholder="Time in Minutes"
+          className="input__text"
+          onChange={taskEstimateHandle}
+        />
 
-          <input type="submit" value="Create Task" className="input__button" />
-        </form>
-      </div>
-    );
-  }
+        <label htmlFor="tdescription" className="task-create__form__label">
+          Description
+        </label>
+        <textarea
+          name="taskdescription"
+          id="tdescription"
+          cols="35"
+          rows="4"
+          placeholder="Description for your Task..."
+          className="task-create__form__description"
+          onChange={taskDescHandle}
+        ></textarea>
+
+        <button
+          className="input__button"
+          type="submit"
+          onClick={taskSubmitHandle}
+        >
+          <Link to="/taskmanager/" class="input__button__link">
+            <h4>Create Task</h4>
+          </Link>
+        </button>
+      </form>
+    </div>
+  );
 }
+
+export default CreateTask;

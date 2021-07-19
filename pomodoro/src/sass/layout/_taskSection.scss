@@ -2,7 +2,39 @@
   width: 90%;
   margin: 0 auto;
 
-  .heading {
-    margin: 15px 0;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .heading {
+      margin: 15px 0;
+    }
+
+    .add-task {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background-image: linear-gradient(
+        to bottom right,
+        var(--col-primary-light-pink),
+        var(--col-primary-dark-pink)
+      );
+      color: var(--col-primary-white);
+      padding: 4px 13px;
+      border-radius: 100px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+      h4 {
+        font-size: 0.85rem;
+      }
+
+      &__icon {
+        width: 15px;
+        margin-left: 3px;
+      }
+    }
   }
 }

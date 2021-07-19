@@ -1,6 +1,7 @@
 :root {
   --col-primary-cream: #fdf6e3;
   --col-primary-pink: #fc9686;
+  --col-primary-light-pink: #f8aea3;
   --col-primary-dark-pink: #fa8370;
   --col-primary-white: #fffefd;
   --col-secondary-dark-pink: #eba192;
@@ -79,6 +80,10 @@ h4 {
 
 .task-create__form__description {
   font-family: "Lato", sans-serif;
+}
+
+.light-grey-text {
+  color: var(--col-text-grey);
 }
 
 .main {
@@ -322,6 +327,17 @@ h4 {
   margin-bottom: 50px;
 }
 
+.task-create__header {
+  position: relative;
+}
+
+.task-create__header .close-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .task-create__heading {
   text-align: center;
   padding: 15px 0;
@@ -352,7 +368,7 @@ h4 {
 
 .task-create__form .input__text:focus {
   outline: none;
-  border: 1px solid var(--col-text-grey);
+  border: 1.5px solid var(--col-text-grey);
 }
 
 .task-create__form .input__button {
@@ -360,10 +376,8 @@ h4 {
   width: 50%;
   margin: 0 auto;
   margin-top: 40px;
-  padding: 10px;
-  background-color: var(--col-primary-pink);
+  background-image: linear-gradient(to bottom right, var(--col-primary-light-pink), var(--col-primary-dark-pink));
   border: none;
-  color: #fff;
   border-radius: 8px;
   box-shadow: rgba(245, 193, 182, 0.2) 0px 20px 25px -5px, rgba(245, 193, 182, 0.1) 0px 10px 10px -5px;
 }
@@ -372,13 +386,24 @@ h4 {
   background-color: var(--col-primary-dark-pink);
 }
 
+.task-create__form .input__button__link {
+  padding: 10px;
+  color: #fff;
+  display: block;
+}
+
 .task-create__form__select {
   margin-bottom: 20px;
   background-color: var(--col-primary-white);
-  color: var(--col-text-dark-grey);
   border: 1.5px solid var(--col-border-grey);
   padding: 7px 10px;
   border-radius: 5px;
+  color: var(--col-text-grey);
+}
+
+.task-create__form__select option {
+  color: var(--col-text-dark-grey);
+  background-color: #fff;
 }
 
 .task-create__form__description {
@@ -387,12 +412,124 @@ h4 {
   padding: 7px 10px;
 }
 
+.task-create__form__description:focus {
+  outline: none;
+  border: 1.5px solid var(--col-text-grey);
+}
+
+.task-card {
+  background-color: var(--col-primary-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.task-card .task-info {
+  margin-bottom: 20px;
+}
+
+.task-card .task-info__tag {
+  color: var(--col-text-light-grey);
+  font-size: 0.8rem;
+}
+
+.task-card .task-info__name {
+  color: var(--col-text-dark-grey);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.task-card .task-info__desc {
+  color: var(--col-text-grey);
+  line-height: 1.4;
+}
+
+.task-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.task-card__actions__button {
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-card__actions__button:not(.task-card__actions__button:last-child) {
+  margin-right: 6px;
+}
+
+.task-card__actions__button .task-icon--done {
+  fill: #8be209;
+}
+
+.task-card__actions__button .task-icon--delete {
+  fill: #f30000;
+}
+
+.task-card__time {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 25px 1.4fr 25px repeat(2, 1fr);
+  padding-top: 20px;
+  border-top: 1px solid var(--col-border-grey);
+}
+
+.task-card__time .task-icon--time {
+  width: 20px;
+}
+
+.task-card__time .time-stat__name {
+  font-size: 0.9rem;
+  margin-top: 3px;
+  color: var(--col-text-dark-grey);
+}
+
+.task-card__time .time-stat__value {
+  color: var(--col-text-grey);
+  font-size: 0.75rem;
+}
+
 .task-section {
   width: 90%;
   margin: 0 auto;
 }
 
-.task-section .heading {
+.task-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-section__header .heading {
   margin: 15px 0;
+}
+
+.task-section__header .add-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(to bottom right, var(--col-primary-light-pink), var(--col-primary-dark-pink));
+  color: var(--col-primary-white);
+  padding: 4px 13px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.task-section__header .add-task h4 {
+  font-size: 0.85rem;
+}
+
+.task-section__header .add-task__icon {
+  width: 15px;
+  margin-left: 3px;
 }
 /*# sourceMappingURL=style.css.map */
