@@ -1,0 +1,24 @@
+.side-menu {
+  background-color: var(--col-primary-white);
+  height: 100vh;
+  width: 100%;
+
+  position: absolute;
+
+  &__top {
+    width: 90%;
+    margin: 15px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .heading {
+    }
+    .close-icon {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

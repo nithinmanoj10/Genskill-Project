@@ -15,7 +15,7 @@ export default class Button extends Component {
         href="javascript:void(0)"
         className="button button--basic"
         onClick={this.state.handleClick}
-        to="/timer"
+        to="/taskmanager"
       >
         Start your tasks
       </Link>

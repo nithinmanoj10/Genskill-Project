@@ -2,13 +2,14 @@
   background-color: #fffefd;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   width: 100%;
+  border-bottom: 1px solid var(--col-text-light-grey);
 }
 
 .mobile-navbar {
   display: flex;
   align-items: center;
 
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 
   .logo {
@@ -19,10 +20,5 @@
 
   .app-name {
     flex: 1;
-  }
-
-  .hamburger-menu {
-    &__icon {
-    }
   }
 }

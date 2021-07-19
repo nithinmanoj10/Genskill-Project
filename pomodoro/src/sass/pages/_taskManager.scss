@@ -1,0 +1,8 @@
+.task-manager {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+  background-color: var(--col-primary-cream);
+}
