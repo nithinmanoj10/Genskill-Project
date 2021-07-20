@@ -1,14 +1,17 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import CloseIcon from "@material-ui/icons/Close";
 import { getDate } from "./Dates";
 
 function CreateTask({ tasks, submitTaskHandle }) {
+  const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskTag, setTaskTag] = useState("");
   const [taskEstimate, setTaskEstimate] = useState("");
   const [taskDesc, setTaskDesc] = useState("");
+  const [taskTagsData, setTaskTagsData] = useState([...tagsData]);
 
   const taskNameHandle = function (e) {
     setTaskTitle(e.target.value);
@@ -77,9 +80,20 @@ function CreateTask({ tasks, submitTaskHandle }) {
           onChange={taskTagHandle}
         >
           <option value="" selected disabled hidden></option>
-          <option value="React">React</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="CSS">CSS</option>
+
+          {console.log(taskTagsData.length)}
+
+          {taskTagsData.length === 0 ? (
+            <option disabled>Make some Tags</option>
+          ) : (
+            taskTagsData.map(function (tag) {
+              return (
+                <option value={`${tag.name}`} id={tag.id}>
+                  {tag.name}
+                </option>
+              );
+            })
+          )}
         </select>
         <label htmlFor="testimate" className="task-create__form__label">
           Estimated Time to Complete

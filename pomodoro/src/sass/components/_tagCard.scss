@@ -1,0 +1,40 @@
+.tag-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-card {
+  background-color: var(--col-primary-white);
+  border-radius: 15px;
+  padding: 10px 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__colour {
+    width: 15px;
+    height: 15px;
+    border-radius: 100px;
+    background-color: aqua;
+  }
+
+  &__name {
+    flex: 1;
+    color: var(--col-text-dark-grey);
+    margin-left: 8px;
+    font-size: 0.9rem;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+      fill: aliceblue;
+    }
+  }
+}

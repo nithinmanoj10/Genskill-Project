@@ -1,0 +1,100 @@
+.tag-create {
+  background-color: var(--col-primary-white);
+
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 50px;
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__submit {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 2/3;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 20px;
+
+    &__label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--col-text-dark-grey);
+      margin-bottom: 5px;
+    }
+
+    .input {
+      &__text {
+        margin-bottom: 20px;
+        padding: 7px 10px;
+        border-radius: 5px;
+        border: 1.5px solid var(--col-border-grey);
+        color: var(--col-text-grey);
+
+        &:focus {
+          outline: none;
+          border: 1.5px solid var(--col-text-grey);
+        }
+      }
+
+      &__colour {
+        background-color: antiquewhite;
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        &__picker {
+          opacity: 1;
+          border: none;
+          width: 35px;
+          height: 35px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &__button {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 40px;
+
+        background-image: linear-gradient(
+          to bottom right,
+          var(--col-primary-light-pink),
+          var(--col-primary-dark-pink)
+        );
+        border: none;
+        border-radius: 8px;
+
+        box-shadow: rgba(245, 193, 182, 0.2) 0px 20px 25px -5px,
+          rgba(245, 193, 182, 0.1) 0px 10px 10px -5px;
+
+        &:hover {
+          background-color: var(--col-primary-dark-pink);
+        }
+
+        &__link {
+          padding: 10px;
+          color: #fff;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,8 @@ import TodayIcon from "@material-ui/icons/Today";
 import { getDate } from "./Dates";
 
 function TaskCard(props) {
+  const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
+
   const {
     task_tag,
     task_title,
@@ -18,12 +20,24 @@ function TaskCard(props) {
     task_endDate,
     task_isCompleted,
   } = props.task;
+
+  const task_colour = tagsData.filter(function (tag) {
+    if (tag.name === task_tag) {
+      return tag.colour;
+    }
+  });
+
+  // console.log(task_colour[0].colour);
+
+  const tagStyles = {
+    color: task_colour[0].colour,
+  };
+
+  console.log(tagStyles);
+
   const { tasks, setTasks } = props;
 
   const deleteHandle = function () {
-    console.log(props);
-    console.log(tasks, setTasks);
-
     const newTasks = tasks.filter((task) => task_id !== task.task_id);
     localStorage.setItem("tasksData", JSON.stringify(newTasks));
     setTasks([...newTasks]);
@@ -48,7 +62,9 @@ function TaskCard(props) {
       }`}
     >
       <div className="task-info">
-        <p className="task-info__tag">{task_tag}</p>
+        <p className="task-info__tag" style={tagStyles}>
+          {task_tag}
+        </p>
         <h4 className="task-info__name">{task_title}</h4>
         <p className="task-info__desc">{task_desc}</p>
       </div>

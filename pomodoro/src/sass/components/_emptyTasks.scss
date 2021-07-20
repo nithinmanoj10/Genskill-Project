@@ -1,5 +1,5 @@
 .regular-show {
-  position: fixed;
+  // position: fixed;
 
   width: 90%;
   margin: 60px auto;
@@ -15,7 +15,7 @@
   &__text {
     margin-top: 20px;
     color: var(--col-text-grey);
-    width: 25ch;
+    width: 30ch;
     text-align: center;
     font-family: "Lato", sans-serif;
   }

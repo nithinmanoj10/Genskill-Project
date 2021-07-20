@@ -2,6 +2,14 @@
   width: 90%;
   margin: 0 auto;
 
+  .warning {
+    color: var(--col-secondary-dark-red);
+    font-size: 0.8rem;
+    width: 40ch;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
   &__header {
     display: flex;
     justify-content: space-between;

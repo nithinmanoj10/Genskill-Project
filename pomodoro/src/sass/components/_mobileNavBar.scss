@@ -20,5 +20,8 @@
 
   .app-name {
     flex: 1;
+    h1 {
+      display: inline-block;
+    }
   }
 }
