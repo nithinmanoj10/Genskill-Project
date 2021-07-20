@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 
 import CloseIcon from "@material-ui/icons/Close";
+import { getDate } from "./Dates";
 
 function CreateTask({ inputTextHandle, tasks, submitTaskHandle }) {
   const [taskTitle, setTaskTitle] = useState("");
@@ -34,6 +35,9 @@ function CreateTask({ inputTextHandle, tasks, submitTaskHandle }) {
     obj.task_tag = taskTag;
     obj.task_estimate = taskEstimate;
     obj.task_desc = taskDesc;
+    obj.task_isCompleted = false;
+    obj.task_startDate = getDate();
+    obj.task_endDate = "-";
     obj.task_id = Math.random() * 100;
 
     tasks.push(obj);

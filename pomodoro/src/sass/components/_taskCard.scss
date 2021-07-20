@@ -9,6 +9,12 @@
   display: grid;
   grid-template-columns: 4fr 1fr;
 
+  &--completed {
+    .task-icon--done {
+      display: none;
+    }
+  }
+
   .task-info {
     margin-bottom: 20px;
 

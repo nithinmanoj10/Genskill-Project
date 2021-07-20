@@ -6,12 +6,14 @@ import CreateTask from "./CreateTask";
 import AddIcon from "@material-ui/icons/Add";
 import TaskCard from "./TaskCard";
 
-function Tasks() {
-  const [tasks, setTasks] = useState([]);
+import { tasksData, updateTasksData } from "./Data/TasksData";
 
-  const submitTaskHandle = function (taskData) {
-    console.log(taskData);
-    setTasks([...taskData]);
+function Tasks() {
+  const [tasks, setTasks] = useState([...tasksData]);
+
+  const submitTaskHandle = function (Data) {
+    updateTasksData(Data);
+    setTasks([...Data]);
   };
 
   return (
@@ -31,8 +33,17 @@ function Tasks() {
         </Switch>
         <ul className="task-list">
           {tasks.map((task) => {
-            console.log(task);
-            return <TaskCard task={task} />;
+            if (task.task_isCompleted == false) {
+              return (
+                <TaskCard
+                  key={task.task_id}
+                  task={task}
+                  tasks={tasks}
+                  setTasks={setTasks}
+                />
+              );
+            }
+            return "";
           })}
         </ul>
       </div>
