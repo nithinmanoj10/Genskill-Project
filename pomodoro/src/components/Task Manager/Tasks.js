@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 import CreateTask from "./CreateTask";
 import AddIcon from "@material-ui/icons/Add";
 import TaskCard from "./TaskCard";
+import EmptyTasks from "./EmptyTasks";
 
-import { tasksData, updateTasksData } from "./Data/TasksData";
+import RegularShowEnjoy from "../../images/Mordecai-Rigby-enjoying.png";
 
 function Tasks() {
+  const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
+
   const [tasks, setTasks] = useState([...tasksData]);
 
   const submitTaskHandle = function (Data) {
-    updateTasksData(Data);
     setTasks([...Data]);
   };
 
@@ -31,21 +33,29 @@ function Tasks() {
             <CreateTask submitTaskHandle={submitTaskHandle} tasks={tasks} />
           </Route>
         </Switch>
-        <ul className="task-list">
-          {tasks.map((task) => {
-            if (task.task_isCompleted == false) {
-              return (
-                <TaskCard
-                  key={task.task_id}
-                  task={task}
-                  tasks={tasks}
-                  setTasks={setTasks}
-                />
-              );
-            }
-            return "";
-          })}
-        </ul>
+        {tasksData.length == 0 ? (
+          <EmptyTasks
+            image={RegularShowEnjoy}
+            text="You have no tasks for now. Go and have some fun :)"
+            alt="Moredecai and Rigby enjoying"
+          />
+        ) : (
+          <ul className="task-list">
+            {tasks.map((task) => {
+              if (task.task_isCompleted == false) {
+                return (
+                  <TaskCard
+                    key={task.task_id}
+                    task={task}
+                    tasks={tasks}
+                    setTasks={setTasks}
+                  />
+                );
+              }
+              return "";
+            })}
+          </ul>
+        )}
       </div>
     </Router>
   );

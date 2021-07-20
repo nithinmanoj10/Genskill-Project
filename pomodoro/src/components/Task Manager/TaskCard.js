@@ -5,7 +5,6 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import TodayIcon from "@material-ui/icons/Today";
 
-import { tasksData, updateTasksData } from "./Data/TasksData";
 import { getDate } from "./Dates";
 
 function TaskCard(props) {
@@ -26,7 +25,7 @@ function TaskCard(props) {
     console.log(tasks, setTasks);
 
     const newTasks = tasks.filter((task) => task_id !== task.task_id);
-    updateTasksData(newTasks);
+    localStorage.setItem("tasksData", JSON.stringify(newTasks));
     setTasks([...newTasks]);
   };
 
@@ -38,6 +37,7 @@ function TaskCard(props) {
       }
       return task;
     });
+    localStorage.setItem("tasksData", JSON.stringify(updatedTasks));
     setTasks([...updatedTasks]);
   };
 

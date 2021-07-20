@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
 import { getDate } from "./Dates";
 
-function CreateTask({ inputTextHandle, tasks, submitTaskHandle }) {
+function CreateTask({ tasks, submitTaskHandle }) {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskTag, setTaskTag] = useState("");
   const [taskEstimate, setTaskEstimate] = useState("");
@@ -41,6 +41,8 @@ function CreateTask({ inputTextHandle, tasks, submitTaskHandle }) {
     obj.task_id = Math.random() * 100;
 
     tasks.push(obj);
+    console.log(tasks);
+    localStorage.setItem("tasksData", JSON.stringify(tasks));
     submitTaskHandle(tasks);
   };
 
