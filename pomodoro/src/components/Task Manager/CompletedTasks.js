@@ -8,12 +8,18 @@ function CompletedTasks() {
   const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
   const [tasks, setTasks] = useState([...tasksData]);
 
+  const completedTasks = tasksData.filter((task) => {
+    if (task.task_isCompleted == true) {
+      return task;
+    }
+  });
+
   return (
     <div className="task-section">
       <header className="task-section__header">
         <h2 className="heading">Completed Tasks</h2>
       </header>
-      {tasksData.length == 0 ? (
+      {completedTasks.length == 0 ? (
         <EmptyTasks
           image={RegularShowWork}
           text="You haven't completed any tasks. Now get back to work ;)"
@@ -21,18 +27,15 @@ function CompletedTasks() {
         />
       ) : (
         <ul className="task-list">
-          {tasks.map((task) => {
-            if (task.task_isCompleted == true) {
-              return (
-                <TaskCard
-                  key={task.task_id}
-                  task={task}
-                  tasks={tasks}
-                  setTasks={setTasks}
-                />
-              );
-            }
-            return "";
+          {completedTasks.map((task) => {
+            return (
+              <TaskCard
+                key={task.task_id}
+                task={task}
+                tasks={tasks}
+                setTasks={setTasks}
+              />
+            );
           })}
         </ul>
       )}

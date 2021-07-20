@@ -11,8 +11,13 @@ import RegularShowEnjoy from "../../images/Mordecai-Rigby-enjoying.png";
 
 function Tasks() {
   const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
-
   const [tasks, setTasks] = useState([...tasksData]);
+
+  const pendingTasks = tasksData.filter((task) => {
+    if (task.task_isCompleted == false) {
+      return task;
+    }
+  });
 
   const submitTaskHandle = function (Data) {
     setTasks([...Data]);
@@ -33,7 +38,7 @@ function Tasks() {
             <CreateTask submitTaskHandle={submitTaskHandle} tasks={tasks} />
           </Route>
         </Switch>
-        {tasksData.length == 0 ? (
+        {pendingTasks.length == 0 ? (
           <EmptyTasks
             image={RegularShowEnjoy}
             text="You have no tasks for now. Go and have some fun :)"
