@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Genskill-Project/static/css/main.8c65eb28.chunk.css",
-    "main.js": "/Genskill-Project/static/js/main.95f70017.chunk.js",
-    "main.js.map": "/Genskill-Project/static/js/main.95f70017.chunk.js.map",
+    "main.css": "/Genskill-Project/static/css/main.57e5c2a0.chunk.css",
+    "main.js": "/Genskill-Project/static/js/main.81e17539.chunk.js",
+    "main.js.map": "/Genskill-Project/static/js/main.81e17539.chunk.js.map",
     "runtime-main.js": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js",
     "runtime-main.js.map": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js.map",
     "static/js/2.f66f8d01.chunk.js": "/Genskill-Project/static/js/2.f66f8d01.chunk.js",
     "static/js/2.f66f8d01.chunk.js.map": "/Genskill-Project/static/js/2.f66f8d01.chunk.js.map",
     "index.html": "/Genskill-Project/index.html",
-    "static/css/main.8c65eb28.chunk.css.map": "/Genskill-Project/static/css/main.8c65eb28.chunk.css.map",
+    "static/css/main.57e5c2a0.chunk.css.map": "/Genskill-Project/static/css/main.57e5c2a0.chunk.css.map",
     "static/js/2.f66f8d01.chunk.js.LICENSE.txt": "/Genskill-Project/static/js/2.f66f8d01.chunk.js.LICENSE.txt",
     "static/media/Mordecai-Rigby-enjoying.89e2f180.png": "/Genskill-Project/static/media/Mordecai-Rigby-enjoying.89e2f180.png",
     "static/media/Mordecai-Rigby-pointing.e3f7fdfd.png": "/Genskill-Project/static/media/Mordecai-Rigby-pointing.e3f7fdfd.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.e1a3b7d5.js",
     "static/js/2.f66f8d01.chunk.js",
-    "static/css/main.8c65eb28.chunk.css",
-    "static/js/main.95f70017.chunk.js"
+    "static/css/main.57e5c2a0.chunk.css",
+    "static/js/main.81e17539.chunk.js"
   ]
 }
