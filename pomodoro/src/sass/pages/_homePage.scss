@@ -5,4 +5,8 @@
 
   overflow: hidden;
   background-color: var(--col-primary-cream);
+
+  &__buttons {
+    display: flex;
+  }
 }

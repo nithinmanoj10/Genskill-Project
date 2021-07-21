@@ -6,6 +6,7 @@ import HomePage from "./components/Home Page/HomePage";
 import MobileNavBar from "./components/NavBar/MobileNavBar";
 import TimerPage from "./components/Timer Page/TimerPage";
 import TaskManager from "./components/Task Manager/TaskManager";
+import SessionManager from "./components/Session Manager/SessionManager";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/timer" component={TimerPage} />
           <Route path="/taskmanager" component={TaskManager} />
+          <Route path="/Session-Manager" component={SessionManager} />
         </Switch>
       </div>
     </Router>

@@ -81,7 +81,7 @@ function CreateTask({ tasks, submitTaskHandle }) {
         >
           <option value="" selected disabled hidden></option>
 
-          {console.log(taskTagsData.length)}
+          {/* {console.log(taskTagsData.length)} */}
 
           {taskTagsData.length === 0 ? (
             <option disabled>Make some Tags</option>

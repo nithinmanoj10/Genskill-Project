@@ -10,11 +10,11 @@ export default class TimerPage extends Component {
   render() {
     return (
       <div className="timerpage">
-        <CurrentTask />
-        <DoneButton />
+        {/* <CurrentTask /> */}
+        {/* <DoneButton /> */}
         <Timer />
-        <ControlButton />
-        <CancelButton />
+        {/* <ControlButton /> */}
+        {/* <CancelButton /> */}
       </div>
     );
   }

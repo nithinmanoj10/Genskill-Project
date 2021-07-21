@@ -6,6 +6,8 @@ export default class Button extends Component {
     super(props);
     this.state = {
       handleClick: props.handleClick,
+      text: props.text,
+      to: props.to,
     };
   }
 
@@ -15,9 +17,9 @@ export default class Button extends Component {
         href="javascript:void(0)"
         className="button button--basic"
         onClick={this.state.handleClick}
-        to="/taskmanager"
+        to={this.state.to}
       >
-        Start your tasks
+        {this.props.text}
       </Link>
     );
   }

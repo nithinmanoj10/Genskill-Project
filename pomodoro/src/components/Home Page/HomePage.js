@@ -7,7 +7,10 @@ export default class HomePage extends Component {
     return (
       <div className="homepage">
         <HeroBox />
-        <Button />
+        <div class="homepage__buttons">
+          <Button text="View Tasks" to="/taskmanager" />
+          <Button text="Start" to="/Session-Manager" />
+        </div>
       </div>
     );
   }

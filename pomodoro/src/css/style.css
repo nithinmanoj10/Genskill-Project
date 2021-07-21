@@ -99,6 +99,10 @@ h4 {
   background-color: var(--col-primary-cream);
 }
 
+.homepage__buttons {
+  display: flex;
+}
+
 .timerpage {
   display: flex;
   flex-direction: column;
@@ -185,11 +189,12 @@ h4 {
 
 .button--basic {
   background-color: #fff;
-  padding: 15px 65px;
+  padding: 15px 25px;
   font-weight: 700;
   color: var(--col-primary-pink);
   border: 1px solid #e0e0e0;
   border-radius: 100px;
+  margin: 0 5px;
   margin-top: 30px;
 }
 
@@ -655,6 +660,125 @@ h4 {
 
 .tag-card__close__icon {
   fill: aliceblue;
+}
+
+.session-create {
+  background-color: var(--col-primary-white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 50px;
+}
+
+.session-create__header {
+  position: relative;
+}
+
+.session-create__header .close-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.session-create__heading {
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--col-border-grey);
+}
+
+.session-create__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.session-create__form__label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--col-text-dark-grey);
+  margin-bottom: 5px;
+}
+
+.session-create__form__label .light-italic {
+  color: var(--col-text-light-grey);
+  font-weight: 400;
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.session-create__form .input__text {
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1.5px solid var(--col-border-grey);
+  color: var(--col-text-grey);
+}
+
+.session-create__form .input__text:focus {
+  outline: none;
+  border: 1.5px solid var(--col-text-grey);
+}
+
+.session-create__form .input__number {
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1.5px solid var(--col-border-grey);
+  color: var(--col-text-grey);
+}
+
+.session-create__form .input__number:focus {
+  outline: none;
+  border: 1.5px solid var(--col-text-grey);
+}
+
+.session-create__form .input__button {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-image: linear-gradient(to bottom right, var(--col-primary-light-pink), var(--col-primary-dark-pink));
+  border: none;
+  border-radius: 8px;
+  box-shadow: rgba(245, 193, 182, 0.2) 0px 20px 25px -5px, rgba(245, 193, 182, 0.1) 0px 10px 10px -5px;
+}
+
+.session-create__form .input__button:hover {
+  background-color: var(--col-primary-dark-pink);
+}
+
+.session-create__form .input__button__link {
+  padding: 10px;
+  color: #fff;
+  display: block;
+}
+
+.session-create__form__select {
+  margin-bottom: 20px;
+  background-color: var(--col-primary-white);
+  border: 1.5px solid var(--col-border-grey);
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: var(--col-text-grey);
+}
+
+.session-create__form__select option {
+  color: var(--col-text-dark-grey);
+  background-color: #fff;
+}
+
+.session-create__form__description {
+  border: 1.5px solid var(--col-border-grey);
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+
+.session-create__form__description:focus {
+  outline: none;
+  border: 1.5px solid var(--col-text-grey);
 }
 
 .task-section {
