@@ -483,7 +483,7 @@ h4 {
 }
 
 .task-card__actions__button .task-icon--delete {
-  fill: #f30000;
+  fill: #000000;
 }
 
 .task-card__time {
@@ -779,6 +779,84 @@ h4 {
 .session-create__form__description:focus {
   outline: none;
   border: 1.5px solid var(--col-text-grey);
+}
+
+.session-card {
+  background-color: var(--col-primary-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-row-gap: 30px;
+}
+
+.session-card__info {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.session-card__info__name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.session-card__info__task {
+  color: var(--col-text-dark-grey);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.session-card__info__description {
+  color: var(--col-text-grey);
+  line-height: 1.4;
+}
+
+.session-card__actions {
+  padding: 5px 0;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.session-card__actions__button {
+  border: none;
+  border-radius: 100px;
+  background-color: transparent;
+}
+
+.session-card__status {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.session-card__status__stat {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.session-card__status__stat__name {
+  font-weight: 700;
+  color: var(--col-text-dark-grey);
+  font-size: 0.9rem;
+}
+
+.session-card__status__stat__value {
+  font-size: 0.9rem;
+  margin-left: 7px;
+  color: var(--col-text-grey);
+}
+
+.session-card__status__stat__value--started {
+  color: #dda817;
+}
+
+.session-card__status__stat__value--finished {
+  color: #14b314;
 }
 
 .task-section {

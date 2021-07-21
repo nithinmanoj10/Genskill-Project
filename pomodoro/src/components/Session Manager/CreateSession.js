@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 import CloseIcon from "@material-ui/icons/Close";
 
-function CreateSession() {
+function CreateSession({ sessionData, setSessionData }) {
+  console.log(sessionData, setSessionData);
+
   const tasksData = JSON.parse(
     localStorage.getItem("tasksData") || "[]"
   ).filter(function (task) {
@@ -13,8 +15,14 @@ function CreateSession() {
   });
 
   const sessionInfo = {
+    id: Math.random() * 100,
+    activeTime: 25,
+    shortBreak: 5,
+    longBreak: 30,
+    intervals: 4,
     isStarted: false,
     isFinished: false,
+    currentInterval: 0,
   };
 
   const sessionTitleHandle = function (e) {
@@ -40,18 +48,10 @@ function CreateSession() {
   };
 
   const sessionSubmitHandle = function () {
-    console.log(sessionInfo);
+    sessionData.push(sessionInfo);
+    setSessionData([...sessionData]);
+    localStorage.setItem("sessionsData", JSON.stringify(sessionData));
   };
-
-  useEffect(() => {
-    return () => {
-      const sessionsData = JSON.parse(
-        localStorage.getItem("sessionsData") || "[]"
-      );
-      sessionsData.push(sessionInfo);
-      localStorage.setItem("sessionsData", JSON.stringify(sessionsData));
-    };
-  }, []);
 
   return (
     <div className="task-create">
@@ -84,6 +84,9 @@ function CreateSession() {
           id="sstudytime"
           className="input__number"
           onChange={sessionActiveTimeHandle}
+          defaultValue="25"
+          min="10"
+          max="120"
         />
 
         <label
@@ -99,6 +102,9 @@ function CreateSession() {
           id="sshortbreaktime"
           className="input__number"
           onChange={sessionShortBreakHandle}
+          defaultValue="5"
+          min="5"
+          max="20"
         />
 
         <label htmlFor="slongbreaktime" className="session-create__form__label">
@@ -111,6 +117,9 @@ function CreateSession() {
           id="slongbreaktime"
           className="input__number"
           onChange={sessionLongBreakHandle}
+          defaultValue="30"
+          min="20"
+          max="60"
         />
 
         <label htmlFor="stask" className="session-create__form__label">
@@ -140,12 +149,14 @@ function CreateSession() {
           Number of Intervals
         </label>
         <input
-          type="text"
+          type="number"
           name="sessionintervals"
           id="sintervals"
-          placeholder="Number of Intervals"
-          className="input__text"
+          className="input__number"
           onChange={sessionIntervalsHandle}
+          defaultValue="4"
+          min="1"
+          max="12"
         />
 
         <label htmlFor="tdescription" className="session-create__form__label">

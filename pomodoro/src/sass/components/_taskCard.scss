@@ -19,7 +19,6 @@
     margin-bottom: 20px;
 
     &__tag {
-      // color: var(--col-text-light-grey);
       font-size: 0.8rem;
     }
 
@@ -59,7 +58,7 @@
           fill: #8be209;
         }
         &--delete {
-          fill: #f30000;
+          fill: #000000;
         }
       }
     }

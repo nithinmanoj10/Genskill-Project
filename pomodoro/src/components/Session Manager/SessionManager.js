@@ -1,11 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import AddIcon from "@material-ui/icons/Add";
 import CreateSession from "./CreateSession";
+import SessionCard from "./SessionCard";
+import EmptyTasks from "../Task Manager/EmptyTasks";
+import RegularShowReading from "../../images/Rigby-reading.png";
 
 function SessionManager() {
+  const [sessionData, setSessionData] = useState([
+    ...JSON.parse(localStorage.getItem("sessionsData") || "[]"),
+  ]);
+
   return (
     <Router>
       <div className="task-manager">
@@ -22,9 +29,30 @@ function SessionManager() {
           </header>
           <Switch>
             <Route path="/Genskill-Project/Session-Manager/create-tag">
-              <CreateSession />
+              <CreateSession
+                sessionData={sessionData}
+                setSessionData={setSessionData}
+              />
             </Route>
           </Switch>
+
+          {sessionData.length === 0 ? (
+            <EmptyTasks
+              image={RegularShowReading}
+              text="Create a session and let's get productive :D"
+              alt="Rigby Reading"
+            />
+          ) : (
+            sessionData.map(function (session) {
+              return (
+                <SessionCard
+                  session={session}
+                  sessionData={sessionData}
+                  setSessionData={setSessionData}
+                />
+              );
+            })
+          )}
         </div>
       </div>
     </Router>
