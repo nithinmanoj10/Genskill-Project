@@ -165,7 +165,7 @@ function CreateSession({ sessionData, setSessionData }) {
         <textarea
           name="sessiondescription"
           id="tdescription"
-          cols="35"
+          cols="30"
           rows="4"
           placeholder="Description for your Session..."
           className="session-create__form__description"

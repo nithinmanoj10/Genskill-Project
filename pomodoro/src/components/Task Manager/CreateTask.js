@@ -113,7 +113,7 @@ function CreateTask({ tasks, submitTaskHandle }) {
         <textarea
           name="taskdescription"
           id="tdescription"
-          cols="35"
+          cols="30"
           rows="4"
           placeholder="Description for your Task..."
           className="task-create__form__description"

@@ -94,6 +94,7 @@
       border: 1.5px solid var(--col-border-grey);
       border-radius: 5px;
       padding: 7px 10px;
+      resize: none;
 
       &:focus {
         outline: none;
