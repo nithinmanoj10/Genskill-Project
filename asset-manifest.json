@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Pomodoro-Testing/static/css/main.f68c4e10.chunk.css",
+    "main.js": "/Pomodoro-Testing/static/js/main.12ada861.chunk.js",
+    "main.js.map": "/Pomodoro-Testing/static/js/main.12ada861.chunk.js.map",
+    "runtime-main.js": "/Pomodoro-Testing/static/js/runtime-main.d5e4b14b.js",
+    "runtime-main.js.map": "/Pomodoro-Testing/static/js/runtime-main.d5e4b14b.js.map",
+    "static/js/2.008f3b4e.chunk.js": "/Pomodoro-Testing/static/js/2.008f3b4e.chunk.js",
+    "static/js/2.008f3b4e.chunk.js.map": "/Pomodoro-Testing/static/js/2.008f3b4e.chunk.js.map",
+    "index.html": "/Pomodoro-Testing/index.html",
+    "static/css/main.f68c4e10.chunk.css.map": "/Pomodoro-Testing/static/css/main.f68c4e10.chunk.css.map",
+    "static/js/2.008f3b4e.chunk.js.LICENSE.txt": "/Pomodoro-Testing/static/js/2.008f3b4e.chunk.js.LICENSE.txt",
+    "static/media/Mordecai-Rigby-enjoying.89e2f180.png": "/Pomodoro-Testing/static/media/Mordecai-Rigby-enjoying.89e2f180.png",
+    "static/media/Mordecai-Rigby-pointing.e3f7fdfd.png": "/Pomodoro-Testing/static/media/Mordecai-Rigby-pointing.e3f7fdfd.png",
+    "static/media/Mordecai-Rigby-working.8610382c.png": "/Pomodoro-Testing/static/media/Mordecai-Rigby-working.8610382c.png",
+    "static/media/illustration-working-brown.24887bc9.svg": "/Pomodoro-Testing/static/media/illustration-working-brown.24887bc9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d5e4b14b.js",
+    "static/js/2.008f3b4e.chunk.js",
+    "static/css/main.f68c4e10.chunk.css",
+    "static/js/main.12ada861.chunk.js"
+  ]
+}
