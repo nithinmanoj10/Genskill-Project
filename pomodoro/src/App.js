@@ -14,10 +14,13 @@ function App() {
       <div className="main">
         <MobileNavBar />
         <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/timer" component={TimerPage} />
-          <Route path="/taskmanager" component={TaskManager} />
-          <Route path="/Session-Manager" component={SessionManager} />
+          <Route path="/Genskill-Project" exact component={HomePage} />
+          <Route path="/Genskill-Project/timer" component={TimerPage} />
+          <Route path="/Genskill-Project/taskmanager" component={TaskManager} />
+          <Route
+            path="/Genskill-Project/Session-Manager"
+            component={SessionManager}
+          />
         </Switch>
       </div>
     </Router>

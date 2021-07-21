@@ -10,7 +10,7 @@ export default class TaskNavBar extends Component {
             <Link
               href="javascript:void(0)"
               className="task-nav-bar__list__item__link"
-              to="/taskmanager/"
+              to="/Genskill-Project/taskmanager/"
             >
               Tasks
             </Link>
@@ -19,7 +19,7 @@ export default class TaskNavBar extends Component {
             <Link
               href="javascript:void(0)"
               className="task-nav-bar__list__item__link"
-              to="/taskmanager/completed"
+              to="/Genskill-Project/taskmanager/completed"
             >
               Completed
             </Link>
@@ -28,7 +28,7 @@ export default class TaskNavBar extends Component {
             <Link
               href="javascript:void(0)"
               className="task-nav-bar__list__item__link"
-              to="/taskmanager/tags"
+              to="/Genskill-Project/taskmanager/tags"
             >
               Tags
             </Link>

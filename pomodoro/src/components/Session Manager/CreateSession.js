@@ -44,8 +44,6 @@ function CreateSession() {
   };
 
   useEffect(() => {
-    alert("Hello");
-
     return () => {
       const sessionsData = JSON.parse(
         localStorage.getItem("sessionsData") || "[]"
@@ -59,7 +57,7 @@ function CreateSession() {
     <div className="task-create">
       <header className="session-create__header">
         <h4 className="session-create__heading">Create Session</h4>
-        <Link to="/Session-Manager">
+        <Link to="/Genskill-Project/Session-Manager">
           <CloseIcon className="close-icon" />
         </Link>
       </header>
@@ -168,7 +166,10 @@ function CreateSession() {
           type="submit"
           onClick={sessionSubmitHandle}
         >
-          <Link to="/sessionmanager/" class="input__button__link">
+          <Link
+            to="/Genskill-Project/sessionmanager/"
+            class="input__button__link"
+          >
             <h4>Create Session</h4>
           </Link>
         </button>

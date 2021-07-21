@@ -53,7 +53,7 @@ function CreateTask({ tasks, submitTaskHandle }) {
     <div className="task-create">
       <header className="task-create__header">
         <h4 className="task-create__heading">Create Task</h4>
-        <Link to="/taskmanager">
+        <Link to="/Genskill-Project/taskmanager">
           <CloseIcon className="close-icon" />
         </Link>
       </header>
@@ -125,7 +125,7 @@ function CreateTask({ tasks, submitTaskHandle }) {
           type="submit"
           onClick={taskSubmitHandle}
         >
-          <Link to="/taskmanager/" class="input__button__link">
+          <Link to="/Genskill-Project/taskmanager/" class="input__button__link">
             <h4>Create Task</h4>
           </Link>
         </button>

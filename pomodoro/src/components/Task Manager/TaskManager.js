@@ -12,13 +12,13 @@ function TaskManager() {
       <div className="task-manager">
         <TaskNavBar />
         <Switch>
-          <Route path="/taskmanager/" exact>
+          <Route path="/Genskill-Project/taskmanager/" exact>
             <Tasks />
           </Route>
-          <Route path="/taskmanager/completed">
+          <Route path="/Genskill-Project/taskmanager/completed">
             <CompletedTasks />
           </Route>
-          <Route path="/taskmanager/tags">
+          <Route path="/Genskill-Project/taskmanager/tags">
             <Tags />
           </Route>
         </Switch>

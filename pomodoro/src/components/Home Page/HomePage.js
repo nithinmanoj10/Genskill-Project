@@ -8,8 +8,8 @@ export default class HomePage extends Component {
       <div className="homepage">
         <HeroBox />
         <div class="homepage__buttons">
-          <Button text="View Tasks" to="/taskmanager" />
-          <Button text="Start" to="/Session-Manager" />
+          <Button text="View Tasks" to="/Genskill-Project/taskmanager" />
+          <Button text="Start" to="/Genskill-Project/Session-Manager" />
         </div>
       </div>
     );

@@ -28,13 +28,16 @@ function Tasks() {
       <div className="task-section">
         <header className="task-section__header">
           <h2 className="heading">Tasks</h2>
-          <Link to="/taskmanager/create-task" className="add-task">
+          <Link
+            to="/Genskill-Project/taskmanager/create-task"
+            className="add-task"
+          >
             <h4>New Task</h4>
             <AddIcon className="add-task__icon" />
           </Link>
         </header>
         <Switch>
-          <Route path="/taskmanager/create-task">
+          <Route path="/Genskill-Project/taskmanager/create-task">
             <CreateTask submitTaskHandle={submitTaskHandle} tasks={tasks} />
           </Route>
         </Switch>
