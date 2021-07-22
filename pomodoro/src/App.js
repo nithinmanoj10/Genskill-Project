@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "../src/css/style.css";
 import HomePage from "./components/Home Page/HomePage";
@@ -10,7 +10,7 @@ import SessionManager from "./components/Session Manager/SessionManager";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="main">
         <MobileNavBar />
 
