@@ -14,7 +14,7 @@ function App() {
       <MobileNavBar />
 
       <Route path="/" exact component={HomePage} />
-      <Route path="/tasks" component={TaskManager} />
+      <Route path="/task-manager" component={TaskManager} />
       <Route path="/session-manager" component={SessionManager} />
       <Route path="/timer" component={TimerPage} />
     </div>

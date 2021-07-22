@@ -8,6 +8,7 @@ import TaskCard from "./TaskCard";
 import EmptyTasks from "./EmptyTasks";
 
 import RegularShowEnjoy from "../../images/Mordecai-Rigby-enjoying.png";
+import CreateTag from "../Tag Manager/CreateTag";
 
 function Tasks() {
   const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
@@ -28,16 +29,18 @@ function Tasks() {
       <div className="task-section">
         <header className="task-section__header">
           <h2 className="heading">Tasks</h2>
-          <Link to="/taskmanager/tasks/create-task" className="add-task">
+          <Link to="/task-manager/tasks/create-task" className="add-task">
             <h4>New Task</h4>
             <AddIcon className="add-task__icon" />
           </Link>
         </header>
+
         <Switch>
-          <Route path="/taskmanager/tasks/create-task">
+          <Route path="/task-manager/tasks/create-task">
             <CreateTask submitTaskHandle={submitTaskHandle} tasks={tasks} />
           </Route>
         </Switch>
+
         {pendingTasks.length == 0 ? (
           <EmptyTasks
             image={RegularShowEnjoy}

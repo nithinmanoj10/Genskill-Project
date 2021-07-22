@@ -12,7 +12,7 @@ export default class HomePage extends Component {
           <Link to="/session-manager">
             <Button text="Start" />
           </Link>
-          <Link to="/tasks">
+          <Link to="/task-manager/tasks">
             <Button text="View Tasks" />
           </Link>
         </div>

@@ -56,7 +56,7 @@ function CreateTag(props) {
           </div>
         </div>
         <div className="tag-create__close">
-          <Link to="/taskmanager/tags">
+          <Link to="/task-manager/tags">
             <CloseIcon />
           </Link>
         </div>
@@ -66,7 +66,7 @@ function CreateTag(props) {
             type="submit"
             onClick={tagSubmitHandle}
           >
-            <Link to="/taskmanager/tags" class="input__button__link">
+            <Link to="/task-manager/tags" class="input__button__link">
               <h4>Create Tag</h4>
             </Link>
           </button>

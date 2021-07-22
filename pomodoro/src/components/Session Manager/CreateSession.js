@@ -57,7 +57,7 @@ function CreateSession({ sessionData, setSessionData }) {
     <div className="task-create">
       <header className="session-create__header">
         <h4 className="session-create__heading">Create Session</h4>
-        <Link to="/Session-Manager">
+        <Link to="/session-manager">
           <CloseIcon className="close-icon" />
         </Link>
       </header>
@@ -177,7 +177,7 @@ function CreateSession({ sessionData, setSessionData }) {
           type="submit"
           onClick={sessionSubmitHandle}
         >
-          <Link to="/Session-Manager" class="input__button__link">
+          <Link to="/session-manager" class="input__button__link">
             <h4>Create Session</h4>
           </Link>
         </button>

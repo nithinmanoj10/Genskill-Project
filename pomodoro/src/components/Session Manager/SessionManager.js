@@ -19,13 +19,13 @@ function SessionManager() {
         <div className="task-section">
           <header className="task-section__header">
             <h2 className="heading">Sessions</h2>
-            <Link to="/Session-Manager/create-tag" className="add-task">
+            <Link to="/session-manager/create-session" className="add-task">
               <h4>New Session</h4>
               <AddIcon className="add-task__icon" />
             </Link>
           </header>
           <Switch>
-            <Route path="/Session-Manager/create-tag">
+            <Route path="/session-manager/create-session">
               <CreateSession
                 sessionData={sessionData}
                 setSessionData={setSessionData}
