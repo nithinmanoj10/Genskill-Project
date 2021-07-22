@@ -56,7 +56,7 @@ function CreateTag(props) {
           </div>
         </div>
         <div className="tag-create__close">
-          <Link to="/Genskill-Project/taskmanager/tags">
+          <Link to="/taskmanager/tags">
             <CloseIcon />
           </Link>
         </div>

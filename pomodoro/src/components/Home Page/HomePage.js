@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Button from "../Button";
 import HeroBox from "./HeroBox";
 
@@ -8,8 +9,12 @@ export default class HomePage extends Component {
       <div className="homepage">
         <HeroBox />
         <div class="homepage__buttons">
-          <Button text="View Tasks" to="/Genskill-Project/taskmanager" />
-          <Button text="Start" to="/Genskill-Project/Session-Manager" />
+          <Link>
+            <Button text="View Tasks" to="/taskmanager/tasks" />
+          </Link>
+          <Link>
+            <Button text="Start" to="/Session-Manager" />
+          </Link>
         </div>
       </div>
     );

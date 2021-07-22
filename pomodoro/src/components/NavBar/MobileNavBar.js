@@ -7,7 +7,7 @@ export default class MobileNavBar extends Component {
       <header className="header">
         <div className="mobile-navbar">
           <div className="app-name">
-            <Link to="/Genskill-Project">
+            <Link to="/">
               <h1>Pomodoro</h1>
             </Link>
           </div>

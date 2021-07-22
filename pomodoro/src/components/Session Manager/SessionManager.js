@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import AddIcon from "@material-ui/icons/Add";
 import CreateSession from "./CreateSession";
@@ -19,16 +19,13 @@ function SessionManager() {
         <div className="task-section">
           <header className="task-section__header">
             <h2 className="heading">Sessions</h2>
-            <Link
-              to="/Genskill-Project/Session-Manager/create-tag"
-              className="add-task"
-            >
+            <Link to="/Session-Manager/create-tag" className="add-task">
               <h4>New Session</h4>
               <AddIcon className="add-task__icon" />
             </Link>
           </header>
           <Switch>
-            <Route path="/Genskill-Project/Session-Manager/create-tag">
+            <Route path="/Session-Manager/create-tag">
               <CreateSession
                 sessionData={sessionData}
                 setSessionData={setSessionData}

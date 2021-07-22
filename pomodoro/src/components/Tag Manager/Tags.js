@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import AddIcon from "@material-ui/icons/Add";
 import CreateTag from "./CreateTag";
@@ -22,10 +22,7 @@ function Tags() {
       <div className="task-section">
         <header className="task-section__header">
           <h2 className="heading">Tags</h2>
-          <Link
-            to="/Genskill-Project/taskmanager/tags/create-tag"
-            className="add-task"
-          >
+          <Link to="/taskmanager/tags/create-tag" className="add-task">
             <h4>New Tag</h4>
             <AddIcon className="add-task__icon" />
           </Link>
@@ -36,7 +33,7 @@ function Tags() {
         </p>
 
         <Switch>
-          <Route path="/Genskill-Project/taskmanager/tags/create-tag">
+          <Route path="/taskmanager/tags/create-tag">
             <CreateTag
               tagColour={tagColour}
               setTagColour={setTagColour}

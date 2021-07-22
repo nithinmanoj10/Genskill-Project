@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import "../src/css/style.css";
 import HomePage from "./components/Home Page/HomePage";
@@ -14,13 +14,10 @@ function App() {
       <div className="main">
         <MobileNavBar />
         <Switch>
-          <Route path="/Genskill-Project" exact component={HomePage} />
-          <Route path="/Genskill-Project/timer" component={TimerPage} />
-          <Route path="/Genskill-Project/taskmanager" component={TaskManager} />
-          <Route
-            path="/Genskill-Project/Session-Manager"
-            component={SessionManager}
-          />
+          <Route path="/" exact component={HomePage} />
+          <Route path="/timer" component={TimerPage} />
+          <Route path="/taskmanager" component={TaskManager} />
+          <Route path="/Session-Manager" component={SessionManager} />
         </Switch>
       </div>
     </Router>
