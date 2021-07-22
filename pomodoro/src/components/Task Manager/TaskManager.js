@@ -9,10 +9,11 @@ import Tags from "../Tag Manager/Tags";
 function TaskManager() {
   return (
     <div className="task-manager">
-      <TaskNavBar />
+      {/* <TaskNavBar />
       <Tasks />
       <CompletedTasks />
-      <Tags />
+      <Tags /> */}
+      <h1>Hello World</h1>
     </div>
   );
 }
