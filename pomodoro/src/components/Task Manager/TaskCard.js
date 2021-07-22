@@ -21,7 +21,7 @@ function TaskCard(props) {
     task_isCompleted,
   } = props.task;
 
-  // const tagStyles = {};
+  const tagStyles = {};
   // console.log(tagStyles);
 
   // if (tagsData.length !== 0) {
@@ -38,6 +38,15 @@ function TaskCard(props) {
   // const tagStyles = {
   //   color: task_colour[0].colour,
   // };
+
+  if (tagsData.length !== 0) {
+    tagsData.forEach(function (tag) {
+      if (tag.name === task_tag) {
+        tagStyles.color = tag.colour;
+        return;
+      }
+    });
+  }
 
   const { tasks, setTasks } = props;
 
@@ -66,7 +75,9 @@ function TaskCard(props) {
       }`}
     >
       <div className="task-info">
-        <p className="task-info__tag">{task_tag}</p>
+        <p className="task-info__tag" style={tagStyles}>
+          {task_tag}
+        </p>
         <h4 className="task-info__name">{task_title}</h4>
         <p className="task-info__desc">{task_desc}</p>
       </div>

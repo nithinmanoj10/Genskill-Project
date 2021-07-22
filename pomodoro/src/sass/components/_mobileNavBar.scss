@@ -1,8 +1,12 @@
 .header {
   background-color: #fffefd;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  height: 10vh;
   width: 100%;
   border-bottom: 1px solid var(--col-text-light-grey);
+
+  display: flex;
+  align-items: center;
 }
 
 .mobile-navbar {
@@ -22,6 +26,12 @@
     flex: 1;
     h1 {
       display: inline-block;
+    }
+  }
+
+  .hamburger-menu {
+    &__icon {
+      display: block;
     }
   }
 }
