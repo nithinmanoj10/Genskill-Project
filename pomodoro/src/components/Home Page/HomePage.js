@@ -9,11 +9,11 @@ export default class HomePage extends Component {
       <div className="homepage">
         <HeroBox />
         <div class="homepage__buttons">
-          <Link>
-            <Button text="View Tasks" to="/taskmanager/tasks" />
+          <Link to="/task-manager">
+            <Button text="View Tasks" />
           </Link>
-          <Link>
-            <Button text="Start" to="/Session-Manager" />
+          <Link to="/session-manager">
+            <Button text="Start" />
           </Link>
         </div>
       </div>

@@ -13,14 +13,14 @@ export default class Button extends Component {
 
   render() {
     return (
-      <Link
+      <a
         href="javascript:void(0)"
         className="button button--basic"
         onClick={this.state.handleClick}
         to={this.state.to}
       >
         {this.props.text}
-      </Link>
+      </a>
     );
   }
 }
