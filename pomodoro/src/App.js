@@ -10,7 +10,7 @@ import SessionManager from "./components/Session Manager/SessionManager";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="main">
         <MobileNavBar />
 
