@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import "../src/css/style.css";
 import HomePage from "./components/Home Page/HomePage";
@@ -10,17 +10,14 @@ import SessionManager from "./components/Session Manager/SessionManager";
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <div className="main">
-        <MobileNavBar />
+    <div className="main">
+      <MobileNavBar />
 
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/task-manager" component={TaskManager} />
-          <Route path="/session-manager" component={SessionManager} />
-        </Switch>
-      </div>
-    </Router>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/task-manager" component={TaskManager} />
+      <Route path="/session-manager" component={SessionManager} />
+      <Route path="/timer" component={TimerPage} />
+    </div>
   );
 }
 
