@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Genskill-Project/static/css/main.57e5c2a0.chunk.css",
+    "main.css": "/Genskill-Project/static/css/main.535e33f0.chunk.css",
     "main.js": "/Genskill-Project/static/js/main.df188d9b.chunk.js",
     "main.js.map": "/Genskill-Project/static/js/main.df188d9b.chunk.js.map",
     "runtime-main.js": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js",
@@ -8,7 +8,7 @@
     "static/js/2.5477736a.chunk.js": "/Genskill-Project/static/js/2.5477736a.chunk.js",
     "static/js/2.5477736a.chunk.js.map": "/Genskill-Project/static/js/2.5477736a.chunk.js.map",
     "index.html": "/Genskill-Project/index.html",
-    "static/css/main.57e5c2a0.chunk.css.map": "/Genskill-Project/static/css/main.57e5c2a0.chunk.css.map",
+    "static/css/main.535e33f0.chunk.css.map": "/Genskill-Project/static/css/main.535e33f0.chunk.css.map",
     "static/js/2.5477736a.chunk.js.LICENSE.txt": "/Genskill-Project/static/js/2.5477736a.chunk.js.LICENSE.txt",
     "static/media/Mordecai-Rigby-enjoying.89e2f180.png": "/Genskill-Project/static/media/Mordecai-Rigby-enjoying.89e2f180.png",
     "static/media/Mordecai-Rigby-pointing.e3f7fdfd.png": "/Genskill-Project/static/media/Mordecai-Rigby-pointing.e3f7fdfd.png",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.e1a3b7d5.js",
     "static/js/2.5477736a.chunk.js",
-    "static/css/main.57e5c2a0.chunk.css",
+    "static/css/main.535e33f0.chunk.css",
     "static/js/main.df188d9b.chunk.js"
   ]
 }
