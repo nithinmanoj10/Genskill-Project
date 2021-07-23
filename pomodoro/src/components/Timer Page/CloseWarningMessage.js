@@ -6,8 +6,7 @@ function CloseWarningMessage() {
     <div className="overlay">
       <div className="close-warning">
         <p className="close-warning__message">
-          Are you sure you want to go back? You might lose progress for the
-          current interval
+          Are you sure you want to go back?
         </p>
         <div className="close-warning__action">
           <Link

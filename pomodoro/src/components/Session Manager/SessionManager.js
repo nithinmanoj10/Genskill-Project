@@ -10,9 +10,12 @@ import RegularShowReading from "../../images/Rigby-reading.png";
 import TimerPage from "../Timer Page/TimerPage";
 
 function SessionManager({ currentSession, setCurrentSession }) {
-  const [sessionData, setSessionData] = useState([
-    ...JSON.parse(localStorage.getItem("sessionsData") || "[]"),
-  ]);
+  let [sessionData, setSessionData] = useState([]);
+  useEffect(() => {
+    setSessionData([
+      ...JSON.parse(localStorage.getItem("sessionsData") || "[]"),
+    ]);
+  }, []);
 
   return (
     <Router>
