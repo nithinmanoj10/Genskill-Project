@@ -9,7 +9,7 @@ export default class HomePage extends Component {
       <div className="homepage">
         <HeroBox />
         <div class="homepage__buttons">
-          <Link to="/session-manager">
+          <Link to="/pomodoro/session-manager">
             <Button text="Start" />
           </Link>
           <Link to="/task-manager/tasks">

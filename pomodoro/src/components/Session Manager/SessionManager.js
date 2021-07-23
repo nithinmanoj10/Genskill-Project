@@ -7,8 +7,9 @@ import CreateSession from "./CreateSession";
 import SessionCard from "./SessionCard";
 import EmptyTasks from "../Task Manager/EmptyTasks";
 import RegularShowReading from "../../images/Rigby-reading.png";
+import TimerPage from "../Timer Page/TimerPage";
 
-function SessionManager() {
+function SessionManager({ currentSession, setCurrentSession }) {
   const [sessionData, setSessionData] = useState([
     ...JSON.parse(localStorage.getItem("sessionsData") || "[]"),
   ]);
@@ -19,20 +20,22 @@ function SessionManager() {
         <div className="task-section">
           <header className="task-section__header">
             <h2 className="heading">Sessions</h2>
-            <Link to="/session-manager/create-session" className="add-task">
+            <Link
+              to="/pomodoro/session-manager/create-session"
+              className="add-task"
+            >
               <h4>New Session</h4>
               <AddIcon className="add-task__icon" />
             </Link>
           </header>
           <Switch>
-            <Route path="/session-manager/create-session">
+            <Route path="/pomodoro/session-manager/create-session">
               <CreateSession
                 sessionData={sessionData}
                 setSessionData={setSessionData}
               />
             </Route>
           </Switch>
-
           {sessionData.length === 0 ? (
             <EmptyTasks
               image={RegularShowReading}
@@ -46,6 +49,8 @@ function SessionManager() {
                   session={session}
                   sessionData={sessionData}
                   setSessionData={setSessionData}
+                  currentSession={currentSession}
+                  setCurrentSession={setCurrentSession}
                 />
               );
             })

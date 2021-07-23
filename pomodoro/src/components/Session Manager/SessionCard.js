@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import DeleteIcon from "@material-ui/icons/Delete";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
@@ -6,8 +7,11 @@ import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 function SessionCard(props) {
   const {
     id,
+    activeTime,
+    shortBreak,
+    longBreak,
     isStarted,
-    isFinised,
+    isFinished,
     title,
     task,
     currentInterval,
@@ -15,12 +19,16 @@ function SessionCard(props) {
     description,
   } = props.session;
 
+  const [sessionIsStarted, setSessionIsStarted] = useState(
+    props.session.isStarted
+  );
+
   const { sessionData, setSessionData } = props;
 
-  const sessionDeleteHandle = function () {
-    console.log(id);
-    console.log(sessionData, setSessionData);
+  // to get the details of the current session
+  const { currentSession, setCurrentSession } = props;
 
+  const sessionDeleteHandle = function () {
     const updatedSessionData = sessionData.filter(function (session) {
       if (id !== session.id) {
         return session;
@@ -29,6 +37,24 @@ function SessionCard(props) {
 
     setSessionData([...updatedSessionData]);
     localStorage.setItem("sessionsData", JSON.stringify(updatedSessionData));
+  };
+
+  const gotoSessionHandle = function () {
+    setSessionIsStarted(true);
+
+    // need to update sessionIsStarted
+    // updates that data in the local storage as well
+    const updatedSessionData = sessionData.filter(function (session) {
+      if (id === session.id) {
+        session.isStarted = true;
+      }
+      return session;
+    });
+
+    setSessionData([...updatedSessionData]);
+    localStorage.setItem("sessionsData", JSON.stringify(updatedSessionData));
+
+    setCurrentSession(props.session);
   };
 
   return (
@@ -45,18 +71,28 @@ function SessionCard(props) {
         >
           <DeleteIcon />
         </button>
-        <button className="session-card__actions__button">
-          <KeyboardArrowRightIcon />
-        </button>
+
+        {isFinished === false ? (
+          <Link to="/pomodoro/timer">
+            <button
+              className="session-card__actions__button"
+              onClick={gotoSessionHandle}
+            >
+              <KeyboardArrowRightIcon />
+            </button>
+          </Link>
+        ) : (
+          <div></div>
+        )}
       </div>
       <div className="session-card__status">
         <div className="session-card__status__stat">
           <p className="session-card__status__stat__name">Status: </p>
-          {isFinised === true ? (
+          {isFinished === true ? (
             <p className="session-card__status__stat__value session-card__status__stat__value--finished ">
               Finished
             </p>
-          ) : isStarted === true ? (
+          ) : sessionIsStarted === true ? (
             <p className="session-card__status__stat__value session-card__status__stat__value--started ">
               Started
             </p>
