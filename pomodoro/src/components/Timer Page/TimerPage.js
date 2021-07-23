@@ -35,12 +35,19 @@ function TimerPage({ currentSession, setCurrentSession }) {
   } = currentSession;
 
   const [isSession, setIsSession] = useState(true);
+  const [timerIsStarted, setTimerIsStarted] = useState(false);
 
   return (
     <Router>
       <div className="timerpage">
         <div className="timerpage__back">
-          <Link to="/pomodoro/timer/close-message">
+          <Link
+            to={`${
+              timerIsStarted === false
+                ? "/pomodoro/session-manager"
+                : "/pomodoro/timer/close-message"
+            }`}
+          >
             <ArrowBackIosIcon />
           </Link>
         </div>
@@ -66,6 +73,7 @@ function TimerPage({ currentSession, setCurrentSession }) {
           setCurrentSession={setCurrentSession}
           isSession={isSession}
           setIsSession={setIsSession}
+          setTimerIsStarted={setTimerIsStarted}
         />
       </div>
     </Router>

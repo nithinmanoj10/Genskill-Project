@@ -223,7 +223,8 @@ h4 {
 
 .button--basic {
   background-color: #fff;
-  padding: 15px 25px;
+  padding: 15px 20px;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--col-primary-pink);
   border: 1px solid #e0e0e0;
@@ -893,6 +894,58 @@ h4 {
 
 .session-card__status__stat__value--finished {
   color: #14b314;
+}
+
+.overlay {
+  position: fixed;
+  height: 1000px;
+  width: 100%;
+  z-index: 10;
+}
+
+.overlay .close-warning {
+  background-color: var(--col-primary-white);
+  padding: 30px 20px;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay .close-warning__message {
+  font-family: "Lato", sans-serif;
+  color: var(--col-text-dark-grey);
+  text-align: center;
+  font-size: 1rem;
+  width: 35ch;
+}
+
+.overlay .close-warning__action {
+  width: 50%;
+  margin: 30px auto 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.overlay .close-warning__action__buttons {
+  color: var(--col-primary-white);
+  padding: 8px;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.overlay .close-warning__action__buttons--green {
+  background-color: var(--col-secondary-green);
+}
+
+.overlay .close-warning__action__buttons--red {
+  background-color: var(--col-text-red);
 }
 
 .task-section {

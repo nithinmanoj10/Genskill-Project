@@ -16,11 +16,13 @@ function Timer(props) {
   const { activeTime, shortBreak, longBreak } = props;
   const { currentSession, setCurrentSession } = props;
   const { isSession, setIsSession } = props;
+  const { setTimerIsStarted } = props;
 
   useEffect(() => {
     let intervalId;
 
     if (isRunning === true) {
+      setTimerIsStarted(true);
       intervalId = setInterval(() => {
         if (seconds === 0) {
           if (minutes !== 0) {
