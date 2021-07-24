@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import ControlButton from "./ControlButton";
 import TimeButton from "./TimeButton";
 
+import StartSound from "../../sounds/start-sound.wav";
+import EndSound from "../../sounds/end-sound.wav";
+
 function Timer(props) {
   const [minutes, setMinutes] = useState(props.activeTime);
   const [seconds, setSeconds] = useState(0);
@@ -29,6 +32,9 @@ function Timer(props) {
             setMinutes(minutes - 1);
             setSeconds(59);
           } else {
+            const endSound = new Audio(EndSound);
+            endSound.play();
+
             if (isSession === true) {
               currentSession.currentInterval = currentBlock + 1;
               setCurrentSession(currentSession);
@@ -62,7 +68,11 @@ function Timer(props) {
 
   const startHandle = function () {
     if (currentSession.isFinished !== true && isReseted == true) {
-      setIsRunning(true);
+      const startSound = new Audio(StartSound);
+      startSound.play();
+      setTimeout(() => {
+        setIsRunning(true);
+      }, 2000);
     }
   };
 
@@ -73,24 +83,30 @@ function Timer(props) {
   };
 
   const pomodoroHandle = function () {
-    setIsSession(true);
-    setMinutes(activeTime);
-    setSeconds(0);
-    setIsReseted(true);
+    if (isRunning === false) {
+      setIsSession(true);
+      setMinutes(activeTime);
+      setSeconds(0);
+      setIsReseted(true);
+    }
   };
 
   const shortBreakHandle = function () {
-    setIsSession(false);
-    setMinutes(shortBreak);
-    setSeconds(0);
-    setIsReseted(true);
+    if (isRunning === false) {
+      setIsSession(false);
+      setMinutes(shortBreak);
+      setSeconds(0);
+      setIsReseted(true);
+    }
   };
 
   const longBreakHandle = function () {
-    setIsSession(false);
-    setMinutes(longBreak);
-    setSeconds(0);
-    setIsReseted(true);
+    if (isRunning === false) {
+      setIsSession(false);
+      setMinutes(longBreak);
+      setSeconds(0);
+      setIsReseted(true);
+    }
   };
 
   return (

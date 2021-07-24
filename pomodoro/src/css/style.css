@@ -223,8 +223,8 @@ h4 {
 
 .button--basic {
   background-color: #fff;
-  padding: 15px 20px;
-  font-size: 0.85rem;
+  padding: 15px 25px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--col-primary-pink);
   border: 1px solid #e0e0e0;
