@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "ArialRounded";
+  src: url(https://pomofocus.io/fonts/ArialRounded/Arial-Rounded-MT-Bold.ttf)
+    format("truetype");
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 100%;
@@ -20,6 +26,7 @@ ul {
 
 h1 {
   font-family: "Pacifico", cursive;
+  // font-family: "ArialRounded", sans-serif;
 }
 
 h2,

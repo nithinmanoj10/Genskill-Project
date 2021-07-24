@@ -61,7 +61,10 @@ function TimerPage({ currentSession, setCurrentSession }) {
         {isSession === true ? (
           <CurrentTask task={currentSession.task} />
         ) : (
-          <h1>Break Time</h1>
+          <div className="break-time">
+            <h3>Break Time</h3>
+            <h4>Time for rest</h4>
+          </div>
         )}
         <Timer
           activeTime={activeTime}

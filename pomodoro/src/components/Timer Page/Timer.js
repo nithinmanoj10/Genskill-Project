@@ -122,14 +122,14 @@ function Timer(props) {
       <div className="timerpage__controls">
         <a
           href="javascript:void(0)"
-          className="button button--cancel"
+          className="button button--basic"
           onClick={startHandle}
         >
           Start
         </a>
         <a
           href="javascript:void(0)"
-          className="button button--cancel"
+          className="button button--basic"
           onClick={pauseHandle}
         >
           Pause
@@ -139,24 +139,24 @@ function Timer(props) {
       <div class="timerpage__buttons">
         <a
           href="javascript:void(0)"
-          className="button button--basic"
+          className="pomodoro-controls"
           onClick={pomodoroHandle}
         >
-          Pomodoro
+          <h4>Pomodoro</h4>
         </a>
         <a
           href="javascript:void(0)"
-          className="button button--basic"
+          className="pomodoro-controls"
           onClick={shortBreakHandle}
         >
-          Short Break
+          <h4>Short Break</h4>
         </a>
         <a
           href="javascript:void(0)"
-          className="button button--basic"
+          className="pomodoro-controls"
           onClick={longBreakHandle}
         >
-          Long Break
+          <h4>Long Break</h4>
         </a>
       </div>
     </div>

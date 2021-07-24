@@ -35,6 +35,11 @@ html {
   scrollbar-width: thin;
 }
 
+@font-face {
+  font-family: "ArialRounded";
+  src: url(https://pomofocus.io/fonts/ArialRounded/Arial-Rounded-MT-Bold.ttf) format("truetype");
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 100%;
@@ -98,9 +103,9 @@ h4 {
 .homepage {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 90vh;
+  height: 100vh;
   overflow: hidden;
   background-color: var(--col-primary-cream);
 }
@@ -111,10 +116,11 @@ h4 {
 
 .timerpage {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,13 +134,51 @@ h4 {
   margin: 30px auto;
 }
 
+.timerpage .break-time {
+  color: var(--col-text-dark-grey);
+  margin-top: 30px;
+  text-align: center;
+}
+
+.timerpage .break-time h3 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.timerpage .break-time h4 {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--col-text-grey);
+  width: 18ch;
+}
+
 .timerpage__buttons {
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.timerpage__buttons .pomodoro-controls {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, var(--col-primary-light-pink), var(--col-primary-dark-pink));
+  color: var(--col-primary-white);
+  padding: 10px 13px;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.timerpage__buttons .pomodoro-controls h4 {
+  font-size: 0.85rem;
 }
 
 .timerpage__controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 20px;
   margin-bottom: 70px;
   width: 130px;
 }
@@ -187,6 +231,7 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 90px 0 20px 0;
 }
 
 .hero-box .greeting {
@@ -201,7 +246,7 @@ h4 {
 
 .hero-box__image {
   width: 350px;
-  margin: 15px 0 30px 0px;
+  margin: 35px 0 30px 0px;
 }
 
 .hero-box__description {
@@ -289,13 +334,14 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px 0 5px 0;
+  width: 90%;
+  margin: 100px 0 5px 0;
 }
 
 .timer__value {
-  font-family: "Rubik", sans-serif;
-  color: var(--col-text-red);
-  font-size: 4rem;
+  font-family: "ArialRounded", sans-serif;
+  color: var(--col-primary-dark-pink);
+  font-size: 5rem;
 }
 
 .timer__session {
