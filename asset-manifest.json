@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/Genskill-Project/static/css/main.4f7b5833.chunk.css",
-    "main.js": "/Genskill-Project/static/js/main.f0684baf.chunk.js",
-    "main.js.map": "/Genskill-Project/static/js/main.f0684baf.chunk.js.map",
+    "main.css": "/Genskill-Project/static/css/main.ef9c5e24.chunk.css",
+    "main.js": "/Genskill-Project/static/js/main.e8dd4216.chunk.js",
+    "main.js.map": "/Genskill-Project/static/js/main.e8dd4216.chunk.js.map",
     "runtime-main.js": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js",
     "runtime-main.js.map": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js.map",
     "static/js/2.724d9886.chunk.js": "/Genskill-Project/static/js/2.724d9886.chunk.js",
     "static/js/2.724d9886.chunk.js.map": "/Genskill-Project/static/js/2.724d9886.chunk.js.map",
     "index.html": "/Genskill-Project/index.html",
-    "static/css/main.4f7b5833.chunk.css.map": "/Genskill-Project/static/css/main.4f7b5833.chunk.css.map",
+    "static/css/main.ef9c5e24.chunk.css.map": "/Genskill-Project/static/css/main.ef9c5e24.chunk.css.map",
     "static/js/2.724d9886.chunk.js.LICENSE.txt": "/Genskill-Project/static/js/2.724d9886.chunk.js.LICENSE.txt",
     "static/media/Mordecai-Rigby-enjoying.89e2f180.png": "/Genskill-Project/static/media/Mordecai-Rigby-enjoying.89e2f180.png",
     "static/media/Mordecai-Rigby-pointing.e3f7fdfd.png": "/Genskill-Project/static/media/Mordecai-Rigby-pointing.e3f7fdfd.png",
     "static/media/Mordecai-Rigby-working.8610382c.png": "/Genskill-Project/static/media/Mordecai-Rigby-working.8610382c.png",
     "static/media/Rigby-reading.343b8b6a.png": "/Genskill-Project/static/media/Rigby-reading.343b8b6a.png",
-    "static/media/illustration-working-brown.24887bc9.svg": "/Genskill-Project/static/media/illustration-working-brown.24887bc9.svg"
+    "static/media/end-sound.1154923f.wav": "/Genskill-Project/static/media/end-sound.1154923f.wav",
+    "static/media/illustration-working-brown.24887bc9.svg": "/Genskill-Project/static/media/illustration-working-brown.24887bc9.svg",
+    "static/media/start-sound.70f7d22e.wav": "/Genskill-Project/static/media/start-sound.70f7d22e.wav"
   },
   "entrypoints": [
     "static/js/runtime-main.e1a3b7d5.js",
     "static/js/2.724d9886.chunk.js",
-    "static/css/main.4f7b5833.chunk.css",
-    "static/js/main.f0684baf.chunk.js"
+    "static/css/main.ef9c5e24.chunk.css",
+    "static/js/main.e8dd4216.chunk.js"
   ]
 }
