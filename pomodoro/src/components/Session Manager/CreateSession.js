@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
 
 function CreateSession({ sessionData, setSessionData }) {
-  console.log(sessionData, setSessionData);
-
   const tasksData = JSON.parse(
     localStorage.getItem("tasksData") || "[]"
   ).filter(function (task) {
@@ -45,6 +43,16 @@ function CreateSession({ sessionData, setSessionData }) {
   };
   const sessionDescriptionHandle = function (e) {
     sessionInfo.description = e.target.value;
+  };
+
+  const optionSelectHandle = function (e) {
+    sessionInfo.task_id = e.target.id;
+
+    tasksData.forEach(function (task) {
+      if (task.task_id == e.target.id) {
+        sessionInfo.tag = task.task_tag;
+      }
+    });
   };
 
   const sessionSubmitHandle = function () {
@@ -138,7 +146,11 @@ function CreateSession({ sessionData, setSessionData }) {
           ) : (
             tasksData.map(function (tasks) {
               return (
-                <option value={`${tasks.task_title}`} id={tasks.task_id}>
+                <option
+                  value={`${tasks.task_title}`}
+                  id={tasks.task_id}
+                  onClick={optionSelectHandle}
+                >
                   {tasks.task_title}
                 </option>
               );

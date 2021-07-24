@@ -16,6 +16,9 @@ function Timer(props) {
   const [isRunning, setIsRunning] = useState(false);
   const [isReseted, setIsReseted] = useState(true);
 
+  // total active time for this session
+  const [sessionTime, setSessionTime] = useState(0);
+
   const { activeTime, shortBreak, longBreak } = props;
   const { currentSession, setCurrentSession } = props;
   const { isSession, setIsSession } = props;
@@ -31,6 +34,10 @@ function Timer(props) {
           if (minutes !== 0) {
             setMinutes(minutes - 1);
             setSeconds(59);
+
+            if (isSession === true) {
+              setSessionTime(sessionTime + 1);
+            }
           } else {
             const endSound = new Audio(EndSound);
             endSound.play();
@@ -40,21 +47,34 @@ function Timer(props) {
               setCurrentSession(currentSession);
               setCurrentBlock((currentBlock) => currentBlock + 1);
               setIsReseted(false);
-
-              console.log(currentBlock, totalBlocks, currentSession.isFinished);
+              setIsSession(false);
 
               if (currentBlock + 1 == totalBlocks) {
                 currentSession.isFinished = true;
               }
 
-              console.log(currentBlock, totalBlocks, currentSession.isFinished);
+              // update the tagsData in localstorage, by updating the tag time with sessionTime
+              const tagsData = JSON.parse(localStorage.getItem("tagsData"));
+
+              const updatedTagsData = tagsData.map(function (tag) {
+                if (tag.name === currentSession.tag) {
+                  tag.tagTotalTime = tag.tagTotalTime + sessionTime;
+                }
+                return tag;
+              });
+
+              localStorage.setItem("tagsData", JSON.stringify(updatedTagsData));
             }
 
+            console.log(sessionTime);
             setIsRunning(false);
             return;
           }
         } else {
           setSeconds(seconds - 1);
+          if (isSession === true) {
+            setSessionTime(sessionTime + 1);
+          }
         }
 
         setCounter((counter) => counter + 1);
@@ -80,6 +100,7 @@ function Timer(props) {
     if (currentSession.isFinished !== true) {
       setIsRunning(false);
     }
+    console.log(sessionTime);
   };
 
   const pomodoroHandle = function () {

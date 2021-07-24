@@ -11,13 +11,13 @@ export default class MobileNavBar extends Component {
               <h1>Pomodoro</h1>
             </Link>
           </div>
-          <a href="javascript:void(0)" className="hamburger-menu">
+          <Link to="/stats" className="hamburger-menu">
             <img
               src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png"
               alt="Hamburger Menu Icon"
               className="hamburger-menu__icon"
             />
-          </a>
+          </Link>
         </div>
       </header>
     );

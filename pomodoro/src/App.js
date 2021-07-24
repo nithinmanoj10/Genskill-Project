@@ -7,6 +7,7 @@ import MobileNavBar from "./components/NavBar/MobileNavBar";
 import TaskManager from "./components/Task Manager/TaskManager";
 import SessionManager from "./components/Session Manager/SessionManager";
 import Pomodoro from "./components/Pomodoro/Pomodoro";
+import StatsPage from "./components/Stats Page/StatsPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/task-manager" component={TaskManager} />
       <Route path="/session-manager" component={SessionManager} />
       <Route path="/pomodoro" component={Pomodoro} />
+      <Route path="/stats" component={StatsPage} />
     </div>
   );
 }

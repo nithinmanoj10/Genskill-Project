@@ -246,7 +246,7 @@ h4 {
 
 .hero-box__image {
   width: 350px;
-  margin: 35px 0 30px 0px;
+  margin: 20px 0 30px 0px;
 }
 
 .hero-box__description {
@@ -457,6 +457,19 @@ h4 {
 }
 
 .task-create__form .input__text:focus {
+  outline: none;
+  border: 1.5px solid var(--col-text-grey);
+}
+
+.task-create__form .input__number {
+  margin-bottom: 20px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  border: 1.5px solid var(--col-border-grey);
+  color: var(--col-text-grey);
+}
+
+.task-create__form .input__number:focus {
   outline: none;
   border: 1.5px solid var(--col-text-grey);
 }

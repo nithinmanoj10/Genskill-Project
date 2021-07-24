@@ -18,7 +18,6 @@ function CreateTask({ tasks, submitTaskHandle }) {
   };
 
   const taskTagHandle = function (e) {
-    console.log(e.target);
     setTaskTag(e.target.value);
   };
 
@@ -44,7 +43,6 @@ function CreateTask({ tasks, submitTaskHandle }) {
     obj.task_id = Math.random() * 100;
 
     tasks.push(obj);
-    console.log(tasks);
     localStorage.setItem("tasksData", JSON.stringify(tasks));
     submitTaskHandle(tasks);
   };
@@ -81,8 +79,6 @@ function CreateTask({ tasks, submitTaskHandle }) {
         >
           <option value="" selected disabled hidden></option>
 
-          {/* {console.log(taskTagsData.length)} */}
-
           {taskTagsData.length === 0 ? (
             <option disabled>Make some Tags</option>
           ) : (
@@ -96,14 +92,14 @@ function CreateTask({ tasks, submitTaskHandle }) {
           )}
         </select>
         <label htmlFor="testimate" className="task-create__form__label">
-          Estimated Time to Complete
+          Estimated Intervals to Complete
         </label>
         <input
-          type="text"
+          type="number"
           name="taskestimate"
           id="testimate"
-          placeholder="Time in Minutes"
-          className="input__text"
+          placeholder="Intervals"
+          className="input__number"
           onChange={taskEstimateHandle}
         />
 

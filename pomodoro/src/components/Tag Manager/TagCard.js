@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import CloseIcon from "@material-ui/icons/Close";
 
 function TagCard({ name, colour, id, tagData, setTagData }) {
-  console.log(name, colour, id, tagData, setTagData);
-
   const deleteTagHandle = function () {
     const newTagData = tagData.filter(function (tag) {
       if (tag.id !== id) {

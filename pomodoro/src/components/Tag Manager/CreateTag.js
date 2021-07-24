@@ -21,6 +21,7 @@ function CreateTag(props) {
       name: tagName,
       colour: tagColour,
       id: Math.random() * 100,
+      tagTotalTime: 0,
     };
 
     tagData.push(newTag);

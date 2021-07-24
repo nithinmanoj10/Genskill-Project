@@ -22,22 +22,6 @@ function TaskCard(props) {
   } = props.task;
 
   const tagStyles = {};
-  // console.log(tagStyles);
-
-  // if (tagsData.length !== 0) {
-  //   const task_colour = tagsData.filter(function (tag) {
-  //     if (tag.name === task_tag) {
-  //       return tag.colour;
-  //     }
-  //   });
-  //   tagStyles.color = task_colour[0].colour;
-  // }
-
-  // console.log(task_colour[0].colour);
-
-  // const tagStyles = {
-  //   color: task_colour[0].colour,
-  // };
 
   if (tagsData.length !== 0) {
     tagsData.forEach(function (tag) {

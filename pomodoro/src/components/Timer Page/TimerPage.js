@@ -9,7 +9,6 @@ import CloseWarningMessage from "./CloseWarningMessage";
 function TimerPage({ currentSession, setCurrentSession }) {
   useEffect(() => {
     return () => {
-      console.log(currentSession);
       const sessionsData = JSON.parse(
         localStorage.getItem("sessionsData") || "[]"
       );
@@ -21,7 +20,6 @@ function TimerPage({ currentSession, setCurrentSession }) {
         return session;
       });
 
-      console.log(updatedSessionsData);
       localStorage.setItem("sessionsData", JSON.stringify(updatedSessionsData));
     };
   }, []);
