@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Genskill-Project/static/css/main.82e68a27.chunk.css",
-    "main.js": "/Genskill-Project/static/js/main.f419205d.chunk.js",
-    "main.js.map": "/Genskill-Project/static/js/main.f419205d.chunk.js.map",
+    "main.js": "/Genskill-Project/static/js/main.093b9c52.chunk.js",
+    "main.js.map": "/Genskill-Project/static/js/main.093b9c52.chunk.js.map",
     "runtime-main.js": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js",
     "runtime-main.js.map": "/Genskill-Project/static/js/runtime-main.e1a3b7d5.js.map",
     "static/js/2.3a8b1662.chunk.js": "/Genskill-Project/static/js/2.3a8b1662.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.e1a3b7d5.js",
     "static/js/2.3a8b1662.chunk.js",
     "static/css/main.82e68a27.chunk.css",
-    "static/js/main.f419205d.chunk.js"
+    "static/js/main.093b9c52.chunk.js"
   ]
 }
