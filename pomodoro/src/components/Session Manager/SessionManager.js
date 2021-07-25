@@ -6,8 +6,9 @@ import AddIcon from "@material-ui/icons/Add";
 import CreateSession from "./CreateSession";
 import SessionCard from "./SessionCard";
 import EmptyTasks from "../Task Manager/EmptyTasks";
-import RegularShowReading from "../../images/Rigby-reading.png";
 import TimerPage from "../Timer Page/TimerPage";
+
+import RegularShowReading from "../../images/Rigby-reading.png";
 
 function SessionManager({ currentSession, setCurrentSession }) {
   let [sessionData, setSessionData] = useState([]);
@@ -44,6 +45,7 @@ function SessionManager({ currentSession, setCurrentSession }) {
               image={RegularShowReading}
               text="Create a session and let's get productive :D"
               alt="Rigby Reading"
+              height={300}
             />
           ) : (
             sessionData.map(function (session) {

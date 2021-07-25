@@ -1,14 +1,16 @@
+import { layouts } from "chart.js";
 import React, { useState, useEffect } from "react";
 
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 function TagDistribution(props) {
   const [tagLabels, setTagLabels] = useState([]);
   const [tagTime, setTagTime] = useState([]);
   const [tagColours, setTagColours] = useState([]);
+  const [tagBorderColours, setTagBorderColours] = useState([]);
 
   useEffect(() => {
-    const tagData = JSON.parse(localStorage.getItem("tagsData"));
+    const tagData = JSON.parse(localStorage.getItem("tagsData") || "[]");
 
     setTagLabels(
       tagData.map(function (tag) {
@@ -24,6 +26,11 @@ function TagDistribution(props) {
 
     setTagColours(
       tagData.map(function (tag) {
+        return tag.colour + "cc";
+      })
+    );
+    setTagBorderColours(
+      tagData.map(function (tag) {
         return tag.colour;
       })
     );
@@ -31,16 +38,21 @@ function TagDistribution(props) {
 
   return (
     <div className="tag-distribution">
-      <Pie
-        height={400}
-        width={600}
+      <Doughnut
+        // defaults={{
+        //   layout: {
+        //     padding: 10,
+        //   },
+        // }}
+        height={250}
+        width={250}
         data={{
           labels: tagLabels,
           datasets: [
             {
               data: tagTime,
               backgroundColor: tagColours,
-              borderColor: tagColours,
+              borderColor: tagBorderColours,
               borderWidth: 1,
             },
           ],
@@ -72,14 +84,22 @@ function TagDistribution(props) {
         //   ],
         // }}
         options={{
-          responsive: true,
+          responsive: false,
+          layout: {
+            padding: 0,
+          },
           plugins: {
             legend: {
               position: "top",
+              maxWidth: 120,
+              labels: {
+                boxWidth: 10,
+                boxHeight: 10,
+              },
             },
             title: {
               display: true,
-              text: "Chart.js Pie Chart",
+              text: "Tag Distribution",
             },
           },
         }}

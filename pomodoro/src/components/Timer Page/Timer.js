@@ -89,11 +89,7 @@ function Timer(props) {
 
   const startHandle = function () {
     if (currentSession.isFinished !== true && isReseted == true) {
-      const startSound = new Audio(StartSound);
-      startSound.play();
-      setTimeout(() => {
-        setIsRunning(true);
-      }, 2000);
+      setIsRunning(true);
     }
   };
 

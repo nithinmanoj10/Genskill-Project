@@ -17,6 +17,7 @@
   --col-text-red: #e75e34;
   --col-border-grey: #e6e6e6;
   --col-button-blue: #0851fc;
+  --col-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 *,
@@ -1005,6 +1006,16 @@ h4 {
 
 .overlay .close-warning__action__buttons--red {
   background-color: var(--col-text-red);
+}
+
+.tag-distribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0px 30px;
+  border-radius: 15px;
+  background-color: var(--col-primary-white);
+  box-shadow: var(--col-box-shadow);
 }
 
 .task-section {

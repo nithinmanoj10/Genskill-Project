@@ -24,6 +24,7 @@ function CompletedTasks() {
           image={RegularShowWork}
           text="You haven't completed any tasks. Now get back to work ;)"
           alt="Moredecai and Rigby Working"
+          height={230}
         />
       ) : (
         <ul className="task-list">

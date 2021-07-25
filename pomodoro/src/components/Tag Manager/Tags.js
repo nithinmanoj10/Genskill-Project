@@ -50,6 +50,7 @@ function Tags() {
             image={RegularShowPoint}
             text="C'mon, create tags so you can track your tasks and be more productive :O"
             alt="Moredecai and Rigby Pointing"
+            height={300}
           />
         ) : (
           <div className="tag-gallery">

@@ -46,6 +46,7 @@ function Tasks() {
             image={RegularShowEnjoy}
             text="You have no tasks for now. Go and have some fun :)"
             alt="Moredecai and Rigby enjoying"
+            height={280}
           />
         ) : (
           <ul className="task-list">
