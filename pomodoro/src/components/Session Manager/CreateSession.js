@@ -37,23 +37,21 @@ function CreateSession({ sessionData, setSessionData }) {
   };
   const sessionTaskHandle = function (e) {
     sessionInfo.task = e.target.value;
+    var index = e.target.selectedIndex;
+    var optionElement = e.target.childNodes[index];
+    var id = optionElement.getAttribute("id");
+
+    tasksData.forEach(function (task) {
+      if (task.task_id == id) {
+        sessionInfo.tag = task.task_tag;
+      }
+    });
   };
   const sessionIntervalsHandle = function (e) {
     sessionInfo.intervals = e.target.value;
   };
   const sessionDescriptionHandle = function (e) {
     sessionInfo.description = e.target.value;
-  };
-
-  const optionSelectHandle = function (e) {
-    sessionInfo.task_id = e.target.id;
-    console.log(e.target.id);
-    tasksData.forEach(function (task) {
-      console.log(task, e.target.id);
-      if (task.task_id == e.target.id) {
-        sessionInfo.tag = task.task_tag;
-      }
-    });
   };
 
   const sessionSubmitHandle = function () {
@@ -147,11 +145,7 @@ function CreateSession({ sessionData, setSessionData }) {
           ) : (
             tasksData.map(function (tasks) {
               return (
-                <option
-                  value={`${tasks.task_title}`}
-                  id={tasks.task_id}
-                  onChange={optionSelectHandle}
-                >
+                <option value={`${tasks.task_title}`} id={tasks.task_id}>
                   {tasks.task_title}
                 </option>
               );

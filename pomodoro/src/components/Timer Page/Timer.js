@@ -26,7 +26,6 @@ function Timer(props) {
 
   useEffect(() => {
     let intervalId;
-    console.log(currentSession);
 
     if (isRunning === true) {
       setTimerIsStarted(true);
@@ -56,7 +55,6 @@ function Timer(props) {
 
               // update the tagsData in localstorage, by updating the tag time with sessionTime
               const tagsData = JSON.parse(localStorage.getItem("tagsData"));
-              console.log(tagsData);
 
               const updatedTagsData = tagsData.map(function (tag) {
                 console.log(tag, currentSession);
@@ -67,11 +65,9 @@ function Timer(props) {
                 return tag;
               });
 
-              console.log(updatedTagsData);
               localStorage.setItem("tagsData", JSON.stringify(updatedTagsData));
             }
 
-            console.log(sessionTime);
             setIsRunning(false);
             return;
           }
@@ -105,7 +101,6 @@ function Timer(props) {
     if (currentSession.isFinished !== true) {
       setIsRunning(false);
     }
-    console.log(sessionTime);
   };
 
   const pomodoroHandle = function () {

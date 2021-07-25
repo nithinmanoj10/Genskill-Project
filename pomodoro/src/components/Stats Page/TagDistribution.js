@@ -29,20 +29,8 @@ function TagDistribution(props) {
     );
   }, []);
 
-  const getTagDetails = function () {};
-
   return (
     <div className="tag-distribution">
-      {/* {tagData.map(function (tag) {
-        return (
-          <p>
-            {tag.name}, {tag.tagTotalTime}. {tag.colour}
-          </p>
-        );
-      })} */}
-      <h1>
-        {tagTime[0]}, {tagColours[0]}, {tagLabels[0]}
-      </h1>
       <Pie
         height={400}
         width={600}

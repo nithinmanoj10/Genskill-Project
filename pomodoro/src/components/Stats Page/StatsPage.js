@@ -5,7 +5,7 @@ function StatsPage() {
   return (
     <div className="task-section">
       <header className="task-section__header">
-        <h2 className="heading">HeHe</h2>
+        <h2 className="heading">Stats</h2>
       </header>
 
       <TagDistribution />
