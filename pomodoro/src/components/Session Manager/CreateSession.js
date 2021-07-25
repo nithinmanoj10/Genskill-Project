@@ -47,8 +47,9 @@ function CreateSession({ sessionData, setSessionData }) {
 
   const optionSelectHandle = function (e) {
     sessionInfo.task_id = e.target.id;
-
+    console.log(e.target.id);
     tasksData.forEach(function (task) {
+      console.log(task, e.target.id);
       if (task.task_id == e.target.id) {
         sessionInfo.tag = task.task_tag;
       }
@@ -149,7 +150,7 @@ function CreateSession({ sessionData, setSessionData }) {
                 <option
                   value={`${tasks.task_title}`}
                   id={tasks.task_id}
-                  onClick={optionSelectHandle}
+                  onChange={optionSelectHandle}
                 >
                   {tasks.task_title}
                 </option>

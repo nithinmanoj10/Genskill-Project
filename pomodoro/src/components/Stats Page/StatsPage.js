@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import TagDistribution from "./TagDistribution";
 
 function StatsPage() {
   return (
     <div className="task-section">
       <header className="task-section__header">
-        <h2 className="heading">Stats</h2>
+        <h2 className="heading">HeHe</h2>
       </header>
+
+      <TagDistribution />
     </div>
   );
 }

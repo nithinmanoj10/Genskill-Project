@@ -26,6 +26,7 @@ function Timer(props) {
 
   useEffect(() => {
     let intervalId;
+    console.log(currentSession);
 
     if (isRunning === true) {
       setTimerIsStarted(true);
@@ -55,14 +56,18 @@ function Timer(props) {
 
               // update the tagsData in localstorage, by updating the tag time with sessionTime
               const tagsData = JSON.parse(localStorage.getItem("tagsData"));
+              console.log(tagsData);
 
               const updatedTagsData = tagsData.map(function (tag) {
+                console.log(tag, currentSession);
                 if (tag.name === currentSession.tag) {
                   tag.tagTotalTime = tag.tagTotalTime + sessionTime;
+                  setSessionTime(0);
                 }
                 return tag;
               });
 
+              console.log(updatedTagsData);
               localStorage.setItem("tagsData", JSON.stringify(updatedTagsData));
             }
 
