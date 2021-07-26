@@ -98,7 +98,8 @@ h4 {
 
 .main {
   background-color: var(--col-primary-cream);
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }
 
 .homepage {
@@ -1016,6 +1017,54 @@ h4 {
   border-radius: 15px;
   background-color: var(--col-primary-white);
   box-shadow: var(--col-box-shadow);
+}
+
+.stats-card {
+  background-color: var(--col-primary-white);
+  box-shadow: var(--col-box-shadow);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 30px;
+  padding: 20px 0px;
+  margin: 20px 0;
+  border-radius: 15px;
+}
+
+.stats-card__header {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-card__header__heading {
+  margin-left: 5px;
+  color: var(--col-text-light-grey);
+}
+
+.stats-card .stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-card .stat {
+  border-right: 1px solid var(--col-border-grey);
+}
+
+.stats-card .stat__name {
+  color: var(--col-text-grey);
+  font-size: 0.9rem;
+}
+
+.stats-card .stat__value {
+  font-size: 1.6rem;
+}
+
+.stats-card .stat__icon {
+  margin-bottom: 20px;
 }
 
 .task-section {
