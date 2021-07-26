@@ -9,6 +9,9 @@ import RegularShowBenson from "../../images/Mordecai-Rigby-benson.png";
 import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import TimelapseIcon from "@material-ui/icons/Timelapse";
+import PieChartIcon from "@material-ui/icons/PieChart";
+import AccuracyMeter from "./AccuracyMeter";
+import TrackChangesIcon from "@material-ui/icons/TrackChanges";
 
 function StatsPage() {
   const [hasStats, setHasStats] = useState(true);
@@ -18,6 +21,7 @@ function StatsPage() {
   const [totalSessions, setTotalSessions] = useState("-");
   const [avgIntervals, setAvgIntervals] = useState("-");
   const [totalHoursActive, setTotalHoursActive] = useState("-");
+  const [estimateAccuracy, setEstimateAccuracy] = useState("N/A");
   const [streak, setStreak] = useState(0);
 
   const iconStyles = {
@@ -26,8 +30,8 @@ function StatsPage() {
   };
 
   useEffect(() => {
-    const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
-    if (tagsData.length === 0) {
+    const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+    if (statsData.time.totalActiveTime == 0) {
       setHasStats(false);
     }
   }, []);
@@ -71,6 +75,16 @@ function StatsPage() {
       setStreak(statsData.days.streak);
     }
 
+    // for estimate accuracy
+    if (statsData.tasks.taskEstimateAccuracy.length !== 0) {
+      const estimateArray = statsData.tasks.taskEstimateAccuracy;
+      const totalAccuracy =
+        estimateArray.reduce(function (total, currentValue) {
+          return total + currentValue;
+        }, 0) / estimateArray.length;
+      setEstimateAccuracy(totalAccuracy);
+    }
+
     const updatedStatsData = [];
     updatedStatsData.push(statsData);
     localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
@@ -83,7 +97,72 @@ function StatsPage() {
       </header>
 
       {hasStats === true ? (
-        <TagDistribution />
+        <div className="">
+          <div className="stats-card">
+            <header className="stats-card__header">
+              <PieChartIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Tag Distribution</h2>
+            </header>
+            <TagDistribution />
+          </div>
+
+          <div className="stats-card">
+            <header className="stats-card__header">
+              <AssignmentTurnedInIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Tasks</h2>
+            </header>
+            <StatsCard
+              name="Task Completion"
+              value={`${taskCompletion}${taskCompletion === "-" ? "" : "%"}`}
+            />
+            <StatsCard
+              name="Avg. Task Duration"
+              value={`${avgTaskDuration}${
+                avgTaskDuration === "-" ? "" : " hrs"
+              }`}
+            />
+          </div>
+
+          <div className="stats-card">
+            <header className="stats-card__header">
+              <MenuBookIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Sessions</h2>
+            </header>
+            <StatsCard name="Total Sessions" value={totalSessions} />
+            <StatsCard name="Avg. Intervals" value={avgIntervals} />
+          </div>
+
+          <div className="stats-card">
+            <header className="stats-card__header">
+              <TimelapseIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Activity</h2>
+            </header>
+            <StatsCard
+              name="Total Hours Active"
+              value={`${totalHoursActive}${
+                totalHoursActive === "-" ? "" : " hrs"
+              }`}
+            />
+            <StatsCard
+              name="Day Streak"
+              value={`${streak} day${streak == 1 ? "" : "s"}`}
+            />
+          </div>
+
+          <div className="stats-card">
+            <header className="stats-card__header">
+              <TrackChangesIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">
+                Interval Estimation Accuracy
+              </h2>
+            </header>
+            <p className="stats-card__header__info">
+              How accurately you can guess the number of intervals required for
+              completing a task
+            </p>
+            <AccuracyMeter estimateAccuracy={estimateAccuracy} />
+          </div>
+        </div>
       ) : (
         <EmptyTasks
           image={RegularShowBenson}
@@ -92,45 +171,6 @@ function StatsPage() {
           height={300}
         />
       )}
-
-      <div className="stats-card">
-        <header className="stats-card__header">
-          <AssignmentTurnedInIcon style={iconStyles} />
-          <h2 className="stats-card__header__heading">Tasks</h2>
-        </header>
-        <StatsCard
-          name="Task Completion"
-          value={`${taskCompletion}${taskCompletion === "-" ? "" : "%"}`}
-        />
-        <StatsCard
-          name="Avg. Task Duration"
-          value={`${avgTaskDuration}${avgTaskDuration === "-" ? "" : " hrs"}`}
-        />
-      </div>
-
-      <div className="stats-card">
-        <header className="stats-card__header">
-          <MenuBookIcon style={iconStyles} />
-          <h2 className="stats-card__header__heading">Sessions</h2>
-        </header>
-        <StatsCard name="Total Sessions" value={totalSessions} />
-        <StatsCard name="Avg. Intervals" value={avgIntervals} />
-      </div>
-
-      <div className="stats-card">
-        <header className="stats-card__header">
-          <TimelapseIcon style={iconStyles} />
-          <h2 className="stats-card__header__heading">Activity</h2>
-        </header>
-        <StatsCard
-          name="Total Hours Active"
-          value={`${totalHoursActive}${totalHoursActive === "-" ? "" : " hrs"}`}
-        />
-        <StatsCard
-          name="Day Streak"
-          value={`${streak} day${streak == 1 ? "" : "s"}`}
-        />
-      </div>
     </div>
   );
 }

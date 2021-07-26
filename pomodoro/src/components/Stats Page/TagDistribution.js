@@ -98,7 +98,7 @@ function TagDistribution(props) {
               },
             },
             title: {
-              display: true,
+              display: false,
               text: "Tag Distribution",
             },
           },

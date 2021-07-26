@@ -37,6 +37,7 @@ function CreateTask({ tasks, submitTaskHandle }) {
     const obj = {};
     obj.task_title = taskTitle;
     obj.task_tag = taskTag;
+    obj.task_intervals = 0;
     obj.task_estimate = taskEstimate;
     obj.task_desc = taskDesc;
     obj.task_isCompleted = false;

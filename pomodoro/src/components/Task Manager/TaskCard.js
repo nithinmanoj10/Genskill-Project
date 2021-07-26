@@ -11,10 +11,17 @@ function TaskCard(props) {
   const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
   const statsData = JSON.parse(localStorage.getItem("statsData"))[0];
 
+  const calcAccuracy = function (guess, actual) {
+    let accuracy = Math.abs(guess - actual) / actual;
+    accuracy = 100 * (1 - accuracy);
+    return accuracy;
+  };
+
   const {
     task_tag,
     task_title,
     task_desc,
+    task_intervals,
     task_estimate,
     task_id,
     task_startDate,
@@ -49,6 +56,11 @@ function TaskCard(props) {
       }
       return task;
     });
+
+    // calculate the accuracy and update it
+    // in the statsData in the localStorage
+    const accuracy = calcAccuracy(task_intervals, task_estimate);
+    statsData.tasks.taskEstimateAccuracy.push(accuracy);
 
     // updating completed tasks in localStorage
     statsData.tasks.completedTasks += 1;

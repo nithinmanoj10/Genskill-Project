@@ -14,6 +14,7 @@ function HomePage() {
             completedTasks: 0,
             taskCompletion: 0,
             avgTaskDuration: 0,
+            taskEstimateAccuracy: [],
           },
           time: {
             totalActiveTime: 0,
@@ -25,7 +26,7 @@ function HomePage() {
           },
           days: {
             currentDay: "-",
-            streak: 0,
+            streak: 1,
           },
         },
       ];

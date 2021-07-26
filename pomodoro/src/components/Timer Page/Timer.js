@@ -7,6 +7,7 @@ import EndSound from "../../sounds/end-sound.wav";
 
 function Timer(props) {
   const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+  const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
 
   const [minutes, setMinutes] = useState(props.activeTime);
   const [seconds, setSeconds] = useState(0);
@@ -55,6 +56,20 @@ function Timer(props) {
                 currentSession.isFinished = true;
               }
 
+              // increase number of intervals for the given task by 1
+
+              const updatedTasksData = tasksData.map(function (task) {
+                if (task.task_id == currentSession.taskId) {
+                  task.task_intervals += 1;
+                }
+                return task;
+              });
+
+              localStorage.setItem(
+                "tasksData",
+                JSON.stringify(updatedTasksData)
+              );
+
               // update the tagsData in localstorage, by updating the tag time with sessionTime
               const tagsData = JSON.parse(localStorage.getItem("tagsData"));
 
@@ -65,10 +80,11 @@ function Timer(props) {
                   statsData.time.totalActiveTime += sessionTime;
 
                   // checking for streaks
-                  const currentDay = statsData.days.currentDay;
+                  let currentDay = statsData.days.currentDay;
                   if (currentDay == "-") {
                     const d = new Date();
                     currentDay = d.toDateString();
+                    statsData.days.currentDay = currentDay;
                   } else {
                     const d = new Date();
                     const today = d.toDateString();

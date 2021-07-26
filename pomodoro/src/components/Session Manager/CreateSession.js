@@ -47,6 +47,7 @@ function CreateSession({ sessionData, setSessionData }) {
     tasksData.forEach(function (task) {
       if (task.task_id == id) {
         sessionInfo.tag = task.task_tag;
+        sessionInfo.taskId = task.task_id;
       }
     });
   };
