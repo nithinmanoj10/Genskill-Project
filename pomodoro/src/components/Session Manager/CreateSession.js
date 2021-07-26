@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import CloseIcon from "@material-ui/icons/Close";
 
 function CreateSession({ sessionData, setSessionData }) {
+  // statsData from localStorage
+  const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+
   const tasksData = JSON.parse(
     localStorage.getItem("tasksData") || "[]"
   ).filter(function (task) {
@@ -58,6 +61,17 @@ function CreateSession({ sessionData, setSessionData }) {
     sessionData.push(sessionInfo);
     setSessionData([...sessionData]);
     localStorage.setItem("sessionsData", JSON.stringify(sessionData));
+
+    // update statsData for session in localStorage
+    statsData.sessions.totalSession += 1;
+    statsData.sessions.totalIntervals += Number(sessionInfo.intervals);
+    const avgIntervals =
+      statsData.sessions.totalIntervals / statsData.sessions.totalSession;
+    statsData.sessions.avgIntervals = avgIntervals.toFixed(1);
+
+    const updatedStatsData = [];
+    updatedStatsData.push(statsData);
+    localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
   };
 
   return (

@@ -13,8 +13,15 @@ import TimelapseIcon from "@material-ui/icons/Timelapse";
 function StatsPage() {
   const [hasStats, setHasStats] = useState(true);
 
+  const [taskCompletion, setTaskCompletion] = useState("-");
+  const [avgTaskDuration, setAvgTaskDuration] = useState("-");
+  const [totalSessions, setTotalSessions] = useState("-");
+  const [avgIntervals, setAvgIntervals] = useState("-");
+  const [totalHoursActive, setTotalHoursActive] = useState("-");
+  const [streak, setStreak] = useState(0);
+
   const iconStyles = {
-    fontSize: 23,
+    fontSize: 19,
     fill: "#b8b8b8",
   };
 
@@ -23,6 +30,50 @@ function StatsPage() {
     if (tagsData.length === 0) {
       setHasStats(false);
     }
+  }, []);
+
+  // for getting the statsData from localStorage once the page loads
+  useEffect(() => {
+    const statsData = JSON.parse(localStorage.getItem("statsData") || [])[0];
+    if (statsData.tasks.taskCompletion != 0) {
+      const num = statsData.tasks.taskCompletion * 100;
+      setTaskCompletion(num.toFixed(1));
+    }
+    if (statsData.tasks.completedTasks != 0) {
+      let duration =
+        statsData.time.totalActiveTime / statsData.tasks.completedTasks;
+      duration = duration / 3600;
+
+      statsData.tasks.avgTaskDuration = duration;
+
+      if (duration < 1) {
+        setAvgTaskDuration(duration.toFixed(2));
+      } else {
+        setAvgTaskDuration(duration.toFixed(1));
+      }
+    }
+    if (statsData.time.totalActiveTime != 0) {
+      const totalHours = statsData.time.totalActiveTime / 3600;
+
+      if (totalHours < 1) {
+        setTotalHoursActive(totalHours.toFixed(2));
+      } else {
+        setTotalHoursActive(totalHours.toFixed(1));
+      }
+    }
+
+    if (statsData.sessions.totalSession != 0) {
+      setTotalSessions(statsData.sessions.totalSession);
+      setAvgIntervals(statsData.sessions.avgIntervals);
+    }
+
+    if (statsData.days.streak != 0) {
+      setStreak(statsData.days.streak);
+    }
+
+    const updatedStatsData = [];
+    updatedStatsData.push(statsData);
+    localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
   }, []);
 
   return (
@@ -47,8 +98,14 @@ function StatsPage() {
           <AssignmentTurnedInIcon style={iconStyles} />
           <h2 className="stats-card__header__heading">Tasks</h2>
         </header>
-        <StatsCard name="Task Completion" value="92%" />
-        <StatsCard name="Avg. Task Duration" value="2.3 hrs" />
+        <StatsCard
+          name="Task Completion"
+          value={`${taskCompletion}${taskCompletion === "-" ? "" : "%"}`}
+        />
+        <StatsCard
+          name="Avg. Task Duration"
+          value={`${avgTaskDuration}${avgTaskDuration === "-" ? "" : " hrs"}`}
+        />
       </div>
 
       <div className="stats-card">
@@ -56,8 +113,8 @@ function StatsPage() {
           <MenuBookIcon style={iconStyles} />
           <h2 className="stats-card__header__heading">Sessions</h2>
         </header>
-        <StatsCard name="Total Sessions" value="12" />
-        <StatsCard name="Avg. Intervals" value="4.7" />
+        <StatsCard name="Total Sessions" value={totalSessions} />
+        <StatsCard name="Avg. Intervals" value={avgIntervals} />
       </div>
 
       <div className="stats-card">
@@ -65,8 +122,14 @@ function StatsPage() {
           <TimelapseIcon style={iconStyles} />
           <h2 className="stats-card__header__heading">Activity</h2>
         </header>
-        <StatsCard name="Total Hours Active" value="14 hrs" />
-        <StatsCard name="Day Streak" value="5 Days" />
+        <StatsCard
+          name="Total Hours Active"
+          value={`${totalHoursActive}${totalHoursActive === "-" ? "" : " hrs"}`}
+        />
+        <StatsCard
+          name="Day Streak"
+          value={`${streak} day${streak == 1 ? "" : "s"}`}
+        />
       </div>
     </div>
   );

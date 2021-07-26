@@ -1040,6 +1040,7 @@ h4 {
 
 .stats-card__header__heading {
   margin-left: 5px;
+  font-size: 1.2rem;
   color: var(--col-text-light-grey);
 }
 
@@ -1057,10 +1058,11 @@ h4 {
 .stats-card .stat__name {
   color: var(--col-text-grey);
   font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 .stats-card .stat__value {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .stats-card .stat__icon {

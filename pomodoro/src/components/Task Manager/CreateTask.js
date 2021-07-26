@@ -6,6 +6,8 @@ import { getDate } from "./Dates";
 
 function CreateTask({ tasks, submitTaskHandle }) {
   const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
+  const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+  // console.log(statsData);
 
   const [taskTitle, setTaskTitle] = useState("");
   const [taskTag, setTaskTag] = useState("");
@@ -42,9 +44,19 @@ function CreateTask({ tasks, submitTaskHandle }) {
     obj.task_endDate = "-";
     obj.task_id = Math.random() * 100;
 
+    // storing the new task in localStorage
     tasks.push(obj);
     localStorage.setItem("tasksData", JSON.stringify(tasks));
     submitTaskHandle(tasks);
+
+    // updating stats in localStorage
+    statsData.tasks.totalTasks += 1;
+    const taskCompletion =
+      statsData.tasks.completedTasks / statsData.tasks.totalTasks;
+    statsData.tasks.taskCompletion = taskCompletion.toFixed(3);
+    const updatedStatsData = [];
+    updatedStatsData.push(statsData);
+    localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
   };
 
   return (

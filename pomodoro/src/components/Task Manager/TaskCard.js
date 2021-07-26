@@ -9,6 +9,7 @@ import { getDate } from "./Dates";
 
 function TaskCard(props) {
   const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
+  const statsData = JSON.parse(localStorage.getItem("statsData"))[0];
 
   const {
     task_tag,
@@ -48,6 +49,15 @@ function TaskCard(props) {
       }
       return task;
     });
+
+    // updating completed tasks in localStorage
+    statsData.tasks.completedTasks += 1;
+    statsData.tasks.taskCompletion =
+      statsData.tasks.completedTasks / statsData.tasks.totalTasks;
+    const updatedStatsData = [];
+    updatedStatsData.push(statsData);
+    localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
+
     localStorage.setItem("tasksData", JSON.stringify(updatedTasks));
     setTasks([...updatedTasks]);
   };

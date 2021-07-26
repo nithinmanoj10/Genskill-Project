@@ -5,6 +5,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 
 function SessionCard(props) {
+  const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+
   const {
     id,
     activeTime,

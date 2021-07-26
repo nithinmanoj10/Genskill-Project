@@ -21,6 +21,7 @@
 
     &__heading {
       margin-left: 5px;
+      font-size: 1.2rem;
       color: var(--col-text-light-grey);
     }
   }
@@ -40,10 +41,11 @@
     &__name {
       color: var(--col-text-grey);
       font-size: 0.9rem;
+      margin-bottom: 5px;
     }
 
     &__value {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
 
     &__icon {

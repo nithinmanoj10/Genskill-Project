@@ -6,6 +6,8 @@ import StartSound from "../../sounds/start-sound.wav";
 import EndSound from "../../sounds/end-sound.wav";
 
 function Timer(props) {
+  const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
+
   const [minutes, setMinutes] = useState(props.activeTime);
   const [seconds, setSeconds] = useState(0);
   const [counter, setCounter] = useState(0);
@@ -59,6 +61,35 @@ function Timer(props) {
               const updatedTagsData = tagsData.map(function (tag) {
                 console.log(tag, currentSession);
                 if (tag.name === currentSession.tag) {
+                  // updating totalActiveTime in localStorage
+                  statsData.time.totalActiveTime += sessionTime;
+
+                  // checking for streaks
+                  const currentDay = statsData.days.currentDay;
+                  if (currentDay == "-") {
+                    const d = new Date();
+                    currentDay = d.toDateString();
+                  } else {
+                    const d = new Date();
+                    const today = d.toDateString();
+                    const diff = Date.parse(today) - Date.parse(currentDay);
+                    if (today !== currentDay) {
+                      if (diff <= 86400000) {
+                        statsData.days.streak += 1;
+                      } else {
+                        statsData.days.streak = 0;
+                      }
+                      statsData.days.currentDay = today;
+                    }
+                  }
+
+                  const updatedStatsData = [];
+                  updatedStatsData.push(statsData);
+                  localStorage.setItem(
+                    "statsData",
+                    JSON.stringify(updatedStatsData)
+                  );
+
                   tag.tagTotalTime = tag.tagTotalTime + sessionTime;
                   setSessionTime(0);
                 }
