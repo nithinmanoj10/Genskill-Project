@@ -1091,6 +1091,63 @@ h4 {
   position: absolute;
 }
 
+.side-drawer {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--col-primary-white);
+  height: 100vh;
+  width: 70%;
+  padding: 25px 30px;
+}
+
+.side-drawer__heading {
+  font-family: "Roboto", sans-serif;
+  color: var(--col-text-dark-grey);
+  width: 100%;
+}
+
+.side-drawer__list {
+  margin-top: 10px;
+  padding: 0px 0;
+  border-top: 1px solid var(--col-border-grey);
+  border-bottom: 1px solid var(--col-border-grey);
+  width: 100%;
+}
+
+.side-drawer__list__item {
+  margin: 25px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.side-drawer__list__item__link {
+  color: var(--col-text-grey);
+  font-size: 1.1rem;
+  margin-left: 7px;
+}
+
+.side-drawer__list__item__link:hover {
+  color: var(--col-text-dark-grey);
+}
+
+.side-drawer__image {
+  width: 350px;
+}
+
+.side-drawer__name {
+  text-align: center;
+}
+
+.side-drawer .empty-space {
+  flex: 1;
+}
+
 .task-section {
   width: 90%;
   margin: 0 auto;

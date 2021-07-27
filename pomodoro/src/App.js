@@ -8,11 +8,14 @@ import TaskManager from "./components/Task Manager/TaskManager";
 import SessionManager from "./components/Session Manager/SessionManager";
 import Pomodoro from "./components/Pomodoro/Pomodoro";
 import StatsPage from "./components/Stats Page/StatsPage";
+import SideDrawer from "./components/NavBar/SideDrawer";
 
 function App() {
   return (
     <div className="main">
       <MobileNavBar />
+
+      <SideDrawer />
 
       <Route path="/" exact component={HomePage} />
       <Route path="/task-manager" component={TaskManager} />

@@ -8,7 +8,8 @@ function AccuracyMeter(props) {
     const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
   }, []);
 
-  const accuracy = props.estimateAccuracy;
+  const num = props.estimateAccuracy;
+  const accuracy = parseFloat(num).toFixed(2);
   const accuracyData = [accuracy, 100 - accuracy];
 
   let color;
@@ -27,7 +28,7 @@ function AccuracyMeter(props) {
   return (
     <div className="accuracy-meter">
       <h1 className="accuracy-meter__value">
-        {accuracy.toFixed(2)}
+        {accuracy}
         {accuracy == "N/A" ? "" : "%"}
       </h1>
       <Doughnut
