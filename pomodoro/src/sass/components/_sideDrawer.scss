@@ -1,5 +1,5 @@
 .side-drawer {
-  overflow: hidden;
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
@@ -8,12 +8,23 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 200;
 
   background-color: var(--col-primary-white);
-  height: 100vh;
+  height: 100%;
   width: 70%;
 
   padding: 25px 30px;
+
+  transition: all 0.2s;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &--close {
+    transform: translateX(100%);
+  }
 
   &__heading {
     font-family: "Roboto", sans-serif;
@@ -24,8 +35,8 @@
   &__list {
     margin-top: 10px;
     padding: 0px 0;
-    border-top: 1px solid var(--col-border-grey);
     border-bottom: 1px solid var(--col-border-grey);
+    border-top: 1px solid var(--col-border-grey);
 
     width: 100%;
 
@@ -48,8 +59,8 @@
   }
 
   &__image {
-    width: 350px;
-    // margin-left: -60px;
+    width: 200px;
+    margin-left: -15px;
   }
 
   &__name {
@@ -58,5 +69,26 @@
 
   .empty-space {
     flex: 1;
+  }
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  transition: all 0.2s;
+
+  &--open {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &--close {
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1;
   }
 }

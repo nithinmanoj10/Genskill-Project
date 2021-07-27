@@ -1092,17 +1092,27 @@ h4 {
 }
 
 .side-drawer {
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 200;
   background-color: var(--col-primary-white);
-  height: 100vh;
+  height: 100%;
   width: 70%;
   padding: 25px 30px;
+  transition: all 0.2s;
+}
+
+.side-drawer--open {
+  transform: translateX(0);
+}
+
+.side-drawer--close {
+  transform: translateX(100%);
 }
 
 .side-drawer__heading {
@@ -1114,8 +1124,8 @@ h4 {
 .side-drawer__list {
   margin-top: 10px;
   padding: 0px 0;
-  border-top: 1px solid var(--col-border-grey);
   border-bottom: 1px solid var(--col-border-grey);
+  border-top: 1px solid var(--col-border-grey);
   width: 100%;
 }
 
@@ -1137,7 +1147,8 @@ h4 {
 }
 
 .side-drawer__image {
-  width: 350px;
+  width: 200px;
+  margin-left: -15px;
 }
 
 .side-drawer__name {
@@ -1146,6 +1157,25 @@ h4 {
 
 .side-drawer .empty-space {
   flex: 1;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.2s;
+}
+
+.overlay--open {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay--close {
+  background-color: rgba(0, 0, 0, 0);
+  z-index: -1;
 }
 
 .task-section {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import "../src/css/style.css";
@@ -9,13 +9,45 @@ import SessionManager from "./components/Session Manager/SessionManager";
 import Pomodoro from "./components/Pomodoro/Pomodoro";
 import StatsPage from "./components/Stats Page/StatsPage";
 import SideDrawer from "./components/NavBar/SideDrawer";
+import Overlay from "./components/NavBar/Overlay";
 
 function App() {
+  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+
+  const sideMenuHandle = function () {
+    const val = !isSideDrawerOpen;
+    setIsSideDrawerOpen(val);
+  };
+
+  const sidemenuClickHandle = function () {
+    sideMenuHandle();
+  };
+
+  const linkClickHandle = function () {
+    sideMenuHandle();
+  };
+
+  const overlayClickHandle = function () {
+    sideMenuHandle();
+  };
+
+  let sideDrawerStyle;
+  let overlayStyle;
+
+  if (isSideDrawerOpen === true) {
+    sideDrawerStyle = "side-drawer--open";
+    overlayStyle = "overlay--open";
+  } else if (isSideDrawerOpen === false) {
+    sideDrawerStyle = "side-drawer--close";
+    overlayStyle = "overlay--close";
+  }
+
   return (
     <div className="main">
-      <MobileNavBar />
+      <SideDrawer styles={sideDrawerStyle} linkClickHandle={linkClickHandle} />
+      <Overlay overlayClickHandle={overlayClickHandle} styles={overlayStyle} />
 
-      <SideDrawer />
+      <MobileNavBar sidemenuClickHandle={sidemenuClickHandle} />
 
       <Route path="/" exact component={HomePage} />
       <Route path="/task-manager" component={TaskManager} />

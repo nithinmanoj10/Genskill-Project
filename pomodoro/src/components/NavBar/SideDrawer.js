@@ -9,44 +9,69 @@ import BarChartIcon from "@material-ui/icons/BarChart";
 
 import ProductivePerson from "../../images/illustration-woman-online-mobile.svg";
 
-function SideDrawer() {
+function SideDrawer(props) {
   const iconStyles = {
     fontSize: 21,
     fill: "#707070",
   };
 
   return (
-    <div className="side-drawer">
+    <div className={`side-drawer ${props.styles}`}>
       <h1 className="side-drawer__heading">Menu</h1>
       <ul className="side-drawer__list">
         <li className="side-drawer__list__item">
           <HomeIcon style={iconStyles} />
-          <Link>
-            <a className="side-drawer__list__item__link">Home</a>
+          <Link to="/">
+            <a
+              className="side-drawer__list__item__link"
+              onClick={props.linkClickHandle}
+            >
+              Home
+            </a>
           </Link>
         </li>
         <li className="side-drawer__list__item">
           <MenuBookIcon style={iconStyles} />
-          <Link>
-            <a className="side-drawer__list__item__link">Sessions</a>
+          <Link to="/pomodoro/session-manager">
+            <a
+              className="side-drawer__list__item__link"
+              onClick={props.linkClickHandle}
+            >
+              Sessions
+            </a>
           </Link>
         </li>
         <li className="side-drawer__list__item">
           <ListAltIcon style={iconStyles} />
-          <Link>
-            <a className="side-drawer__list__item__link">Tasks</a>
+          <Link to="/task-manager/tasks">
+            <a
+              className="side-drawer__list__item__link"
+              onClick={props.linkClickHandle}
+            >
+              Tasks
+            </a>
           </Link>
         </li>
         <li className="side-drawer__list__item">
           <LocalOfferIcon style={iconStyles} />
-          <Link>
-            <a className="side-drawer__list__item__link">Tags</a>
+          <Link to="/task-manager/tags">
+            <a
+              className="side-drawer__list__item__link"
+              onClick={props.linkClickHandle}
+            >
+              Tags
+            </a>
           </Link>
         </li>
         <li className="side-drawer__list__item">
           <BarChartIcon style={iconStyles} />
-          <Link>
-            <a className="side-drawer__list__item__link">Stats</a>
+          <Link to="/stats">
+            <a
+              className="side-drawer__list__item__link"
+              onClick={props.linkClickHandle}
+            >
+              Stats
+            </a>
           </Link>
         </li>
       </ul>
