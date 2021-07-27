@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import HomeIcon from "@material-ui/icons/Home";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
@@ -15,15 +15,25 @@ function SideDrawer(props) {
     fill: "#707070",
   };
 
+  const activeIconStyles = {
+    fontSize: 21,
+    fill: "#3d3d3d",
+  };
+
+  const location = useLocation().pathname;
+  console.log(location);
+
   return (
     <div className={`side-drawer ${props.styles}`}>
       <h1 className="side-drawer__heading">Menu</h1>
       <ul className="side-drawer__list">
         <li className="side-drawer__list__item">
-          <HomeIcon style={iconStyles} />
+          <HomeIcon style={location == "/" ? activeIconStyles : iconStyles} />
           <Link to="/">
             <a
-              className="side-drawer__list__item__link"
+              className={`side-drawer__list__item__link ${
+                location == "/" ? "side-drawer__list__item__link--active" : ""
+              }`}
               onClick={props.linkClickHandle}
             >
               Home
@@ -31,10 +41,20 @@ function SideDrawer(props) {
           </Link>
         </li>
         <li className="side-drawer__list__item">
-          <MenuBookIcon style={iconStyles} />
+          <MenuBookIcon
+            style={
+              location == "/pomodoro/session-manager"
+                ? activeIconStyles
+                : iconStyles
+            }
+          />
           <Link to="/pomodoro/session-manager">
             <a
-              className="side-drawer__list__item__link"
+              className={`side-drawer__list__item__link ${
+                location == "/pomodoro/session-manager"
+                  ? "side-drawer__list__item__link--active"
+                  : ""
+              }`}
               onClick={props.linkClickHandle}
             >
               Sessions
@@ -42,10 +62,18 @@ function SideDrawer(props) {
           </Link>
         </li>
         <li className="side-drawer__list__item">
-          <ListAltIcon style={iconStyles} />
+          <ListAltIcon
+            style={
+              location == "/task-manager/tasks" ? activeIconStyles : iconStyles
+            }
+          />
           <Link to="/task-manager/tasks">
             <a
-              className="side-drawer__list__item__link"
+              className={`side-drawer__list__item__link ${
+                location == "/task-manager/tasks"
+                  ? "side-drawer__list__item__link--active"
+                  : ""
+              }`}
               onClick={props.linkClickHandle}
             >
               Tasks
@@ -53,10 +81,18 @@ function SideDrawer(props) {
           </Link>
         </li>
         <li className="side-drawer__list__item">
-          <LocalOfferIcon style={iconStyles} />
+          <LocalOfferIcon
+            style={
+              location == "/task-manager/tags" ? activeIconStyles : iconStyles
+            }
+          />
           <Link to="/task-manager/tags">
             <a
-              className="side-drawer__list__item__link"
+              className={`side-drawer__list__item__link ${
+                location == "/task-manager/tags"
+                  ? "side-drawer__list__item__link--active"
+                  : ""
+              }`}
               onClick={props.linkClickHandle}
             >
               Tags
@@ -64,10 +100,16 @@ function SideDrawer(props) {
           </Link>
         </li>
         <li className="side-drawer__list__item">
-          <BarChartIcon style={iconStyles} />
+          <BarChartIcon
+            style={location == "/stats" ? activeIconStyles : iconStyles}
+          />
           <Link to="/stats">
             <a
-              className="side-drawer__list__item__link"
+              className={`side-drawer__list__item__link ${
+                location == "/stats"
+                  ? "side-drawer__list__item__link--active"
+                  : ""
+              }`}
               onClick={props.linkClickHandle}
             >
               Stats

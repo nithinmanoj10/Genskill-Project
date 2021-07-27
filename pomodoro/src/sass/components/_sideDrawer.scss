@@ -54,6 +54,11 @@
         &:hover {
           color: var(--col-text-dark-grey);
         }
+
+        &--active {
+          color: var(--col-text-dark-grey);
+          font-weight: 700;
+        }
       }
     }
   }
