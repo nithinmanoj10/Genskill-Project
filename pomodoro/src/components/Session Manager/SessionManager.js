@@ -48,17 +48,19 @@ function SessionManager({ currentSession, setCurrentSession }) {
               height={300}
             />
           ) : (
-            sessionData.map(function (session) {
-              return (
-                <SessionCard
-                  session={session}
-                  sessionData={sessionData}
-                  setSessionData={setSessionData}
-                  currentSession={currentSession}
-                  setCurrentSession={setCurrentSession}
-                />
-              );
-            })
+            <ul class="task-list">
+              {sessionData.map(function (session) {
+                return (
+                  <SessionCard
+                    session={session}
+                    sessionData={sessionData}
+                    setSessionData={setSessionData}
+                    currentSession={currentSession}
+                    setCurrentSession={setCurrentSession}
+                  />
+                );
+              })}
+            </ul>
           )}
         </div>
       </div>

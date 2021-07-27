@@ -34,7 +34,7 @@ export default class HeroBox extends Component {
     return (
       <div className="hero-box">
         <h3 className="greeting">{this.state.greeting}</h3>
-        <h2 className="user-name">{this.state.userName}</h2>
+        {/* <h2 className="user-name">{this.state.userName}</h2> */}
         <img
           src={HeroBoxImage}
           alt="Girl looking at computer, being productive"

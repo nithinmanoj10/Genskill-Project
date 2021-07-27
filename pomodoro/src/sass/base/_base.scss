@@ -13,3 +13,15 @@ body {
 html {
   scrollbar-width: thin;
 }
+
+// for laptops
+@media (min-width: 1200px) {
+  html {
+    background-color: var(--col-secondary-light-pink);
+    background-image: linear-gradient(
+      to bottom right,
+      var(--col-secondary-light-red),
+      var(--col-secondary-dark-red)
+    );
+  }
+}

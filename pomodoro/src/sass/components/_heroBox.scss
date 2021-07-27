@@ -1,5 +1,5 @@
 .hero-box {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
@@ -49,6 +49,24 @@
 
     &__image {
       width: 450px;
+    }
+  }
+}
+
+// for laptops
+@media (min-width: 1200px) {
+  .hero-box {
+    .greeting {
+      font-size: 1.4rem;
+    }
+
+    .user-name {
+      font-size: 1.9rem;
+    }
+
+    &__image {
+      width: 350px;
+      margin-top: 10px;
     }
   }
 }
