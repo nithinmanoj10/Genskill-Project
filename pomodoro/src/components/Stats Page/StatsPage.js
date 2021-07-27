@@ -97,8 +97,8 @@ function StatsPage() {
       </header>
 
       {hasStats === true ? (
-        <div className="">
-          <div className="stats-card">
+        <div className="stats-grid">
+          <div className="stats-card" id="tag-distribution">
             <header className="stats-card__header">
               <PieChartIcon style={iconStyles} />
               <h2 className="stats-card__header__heading">Tag Distribution</h2>
@@ -106,7 +106,7 @@ function StatsPage() {
             <TagDistribution />
           </div>
 
-          <div className="stats-card">
+          <div className="stats-card" id="tasks-stats">
             <header className="stats-card__header">
               <AssignmentTurnedInIcon style={iconStyles} />
               <h2 className="stats-card__header__heading">Tasks</h2>
@@ -123,7 +123,7 @@ function StatsPage() {
             />
           </div>
 
-          <div className="stats-card">
+          <div className="stats-card" id="session-stats">
             <header className="stats-card__header">
               <MenuBookIcon style={iconStyles} />
               <h2 className="stats-card__header__heading">Sessions</h2>
@@ -132,7 +132,7 @@ function StatsPage() {
             <StatsCard name="Avg. Intervals" value={avgIntervals} />
           </div>
 
-          <div className="stats-card">
+          <div className="stats-card" id="activity-stats">
             <header className="stats-card__header">
               <TimelapseIcon style={iconStyles} />
               <h2 className="stats-card__header__heading">Activity</h2>
@@ -149,7 +149,7 @@ function StatsPage() {
             />
           </div>
 
-          <div className="stats-card">
+          <div className="stats-card" id="interval-estimate">
             <header className="stats-card__header">
               <TrackChangesIcon style={iconStyles} />
               <h2 className="stats-card__header__heading">

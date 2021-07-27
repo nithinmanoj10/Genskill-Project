@@ -98,8 +98,8 @@ function TaskCard(props) {
       <div className="task-card__time">
         <ScheduleIcon className="task-icon--time" />
         <div className="time-stat">
-          <p className="time-stat__name">Estimated Time</p>
-          <p className="time-stat__value">{task_estimate} mins</p>
+          <p className="time-stat__name">Est. Intervals</p>
+          <p className="time-stat__value">{task_estimate}</p>
         </div>
         <TodayIcon className="task-icon--time" />
         <div className="time-stat">

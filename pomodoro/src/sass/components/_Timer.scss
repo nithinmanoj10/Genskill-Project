@@ -16,3 +16,16 @@
     color: var(--col-text-grey);
   }
 }
+
+// for tablets
+@media (min-width: 750px) {
+  .timer {
+    &__value {
+      font-size: 6rem;
+    }
+
+    &__session {
+      font-size: 1.3rem;
+    }
+  }
+}

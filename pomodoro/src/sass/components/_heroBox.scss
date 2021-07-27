@@ -35,3 +35,20 @@
     }
   }
 }
+
+// for tablets
+@media (min-width: 750px) {
+  .hero-box {
+    .greeting {
+      font-size: 1.6rem;
+    }
+
+    .user-name {
+      font-size: 2.1rem;
+    }
+
+    &__image {
+      width: 450px;
+    }
+  }
+}

@@ -64,13 +64,17 @@ function SideDrawer(props) {
         <li className="side-drawer__list__item">
           <ListAltIcon
             style={
-              location == "/task-manager/tasks" ? activeIconStyles : iconStyles
+              location == "/task-manager/tasks" ||
+              location == "/task-manager/completed-tasks"
+                ? activeIconStyles
+                : iconStyles
             }
           />
           <Link to="/task-manager/tasks">
             <a
               className={`side-drawer__list__item__link ${
-                location == "/task-manager/tasks"
+                location == "/task-manager/tasks" ||
+                location == "/task-manager/completed-tasks"
                   ? "side-drawer__list__item__link--active"
                   : ""
               }`}

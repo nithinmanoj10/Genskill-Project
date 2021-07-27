@@ -17,3 +17,16 @@
     width: 18ch;
   }
 }
+
+// for tablets
+@media (min-width: 750px) {
+  .current-task {
+    &__heading {
+      font-size: 1.8rem;
+    }
+
+    &__name {
+      font-size: 1.4rem;
+    }
+  }
+}

@@ -9,12 +9,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
   background-color: var(--col-primary-cream);
 
   &__back {
     position: absolute;
+
+    top: 0;
+
     width: 90%;
     margin: 30px auto;
   }
@@ -71,5 +75,14 @@
     margin-top: 20px;
     margin-bottom: 70px;
     width: 130px;
+  }
+}
+
+// for tablets
+@media (min-width: 750px) {
+  .timerpage {
+    &__buttons {
+      width: 70%;
+    }
   }
 }
