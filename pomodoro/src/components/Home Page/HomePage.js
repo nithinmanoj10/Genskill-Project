@@ -18,6 +18,7 @@ function HomePage() {
           },
           time: {
             totalActiveTime: 0,
+            totalHours: Array(24).fill(0),
           },
           sessions: {
             totalSession: 0,

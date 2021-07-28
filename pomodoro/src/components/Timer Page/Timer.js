@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ControlButton from "./ControlButton";
-import TimeButton from "./TimeButton";
 
-import StartSound from "../../sounds/start-sound.wav";
 import EndSound from "../../sounds/end-sound.wav";
 
 function Timer(props) {
   const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
   const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
+  const time = new Date();
 
   const [minutes, setMinutes] = useState(props.activeTime);
   const [seconds, setSeconds] = useState(0);
@@ -21,6 +19,7 @@ function Timer(props) {
 
   // total active time for this session
   const [sessionTime, setSessionTime] = useState(0);
+  const [totalHours, setTotalHours] = useState([...statsData.time.totalHours]);
 
   const { activeTime, shortBreak, longBreak } = props;
   const { currentSession, setCurrentSession } = props;
@@ -40,6 +39,14 @@ function Timer(props) {
 
             if (isSession === true) {
               setSessionTime(sessionTime + 1);
+              setTotalHours(
+                totalHours.map(function (item, i) {
+                  if (i == time.getHours()) {
+                    return item + 1;
+                  }
+                  return item;
+                })
+              );
             }
           } else {
             const endSound = new Audio(EndSound);
@@ -100,6 +107,8 @@ function Timer(props) {
                   }
 
                   const updatedStatsData = [];
+                  console.log(totalHours);
+                  statsData.time.totalHours = totalHours;
                   updatedStatsData.push(statsData);
                   localStorage.setItem(
                     "statsData",
@@ -122,6 +131,14 @@ function Timer(props) {
           setSeconds(seconds - 1);
           if (isSession === true) {
             setSessionTime(sessionTime + 1);
+            setTotalHours(
+              totalHours.map(function (item, i) {
+                if (i == time.getHours()) {
+                  return item + 1;
+                }
+                return item;
+              })
+            );
           }
         }
 

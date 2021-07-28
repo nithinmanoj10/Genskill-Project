@@ -1283,6 +1283,15 @@ h4 {
   position: absolute;
 }
 
+.time-distribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1/-1;
+  margin: 0 10px;
+  margin-top: 25px;
+}
+
 .side-drawer {
   overflow-x: hidden;
   display: flex;

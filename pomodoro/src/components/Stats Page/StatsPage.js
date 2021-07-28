@@ -12,6 +12,7 @@ import TimelapseIcon from "@material-ui/icons/Timelapse";
 import PieChartIcon from "@material-ui/icons/PieChart";
 import AccuracyMeter from "./AccuracyMeter";
 import TrackChangesIcon from "@material-ui/icons/TrackChanges";
+import TimeDistribution from "./TimeDistribution";
 
 function StatsPage() {
   const [hasStats, setHasStats] = useState(true);
@@ -98,6 +99,14 @@ function StatsPage() {
 
       {hasStats === true ? (
         <div className="stats-grid">
+          <div className="stats-card" id="tag-distribution">
+            <header className="stats-card__header">
+              <PieChartIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Tag Distribution</h2>
+            </header>
+            <TimeDistribution />
+          </div>
+
           <div className="stats-card" id="tag-distribution">
             <header className="stats-card__header">
               <PieChartIcon style={iconStyles} />
