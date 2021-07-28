@@ -2,6 +2,8 @@ import React, { Component, useState } from "react";
 import TaskCard from "./TaskCard";
 import EmptyTasks from "./EmptyTasks";
 
+import reverseArray from "../functions/reverseArray";
+
 import RegularShowWork from "../../images/Mordecai-Rigby-working.png";
 
 function CompletedTasks() {
@@ -28,7 +30,7 @@ function CompletedTasks() {
         />
       ) : (
         <ul className="task-list">
-          {completedTasks.map((task) => {
+          {reverseArray(completedTasks).map((task) => {
             return (
               <TaskCard
                 key={task.task_id}

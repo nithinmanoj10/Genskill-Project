@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import CloseIcon from "@material-ui/icons/Close";
 
-function CreateSession({ sessionData, setSessionData }) {
+function CreateSession({ sessionData, setSessionData, setCreateSession }) {
   // statsData from localStorage
   const statsData = JSON.parse(localStorage.getItem("statsData") || "[]")[0];
 
@@ -15,78 +15,180 @@ function CreateSession({ sessionData, setSessionData }) {
     }
   });
 
-  const sessionInfo = {
-    id: Math.random() * 100,
-    activeTime: 25,
-    shortBreak: 5,
-    longBreak: 30,
-    intervals: 4,
-    isStarted: false,
-    isFinished: false,
-    currentInterval: 0,
+  const [sessionTitle, setSessionTitle] = useState("");
+  const [sessionActiveTime, setSessionActiveTime] = useState("25");
+  const [sessionShortBreak, setSessionShortBreak] = useState("5");
+  const [sessionLongBreak, setSessionLongBreak] = useState("30");
+  const [sessionTask, setSessionTask] = useState("");
+  const [sessionInterval, setSessionInterval] = useState("4");
+  const [sessionDescription, setSessionDescription] = useState("");
+  const [sessionTag, setSessionTag] = useState("");
+  const [sessionTaskId, setSessionTaskId] = useState("");
+
+  const [errorMessage, setErrorMessage] = useState([]);
+
+  const closeButtonHandle = function () {
+    setCreateSession("");
   };
 
   const sessionTitleHandle = function (e) {
-    sessionInfo.title = e.target.value;
+    setSessionTitle(e.target.value);
   };
   const sessionActiveTimeHandle = function (e) {
-    sessionInfo.activeTime = e.target.value;
+    setSessionActiveTime(e.target.value);
   };
   const sessionShortBreakHandle = function (e) {
-    sessionInfo.shortBreak = e.target.value;
+    setSessionShortBreak(e.target.value);
   };
   const sessionLongBreakHandle = function (e) {
-    sessionInfo.longBreak = e.target.value;
+    setSessionLongBreak(e.target.value);
   };
   const sessionTaskHandle = function (e) {
-    sessionInfo.task = e.target.value;
+    setSessionTask(e.target.value);
     var index = e.target.selectedIndex;
     var optionElement = e.target.childNodes[index];
     var id = optionElement.getAttribute("id");
 
     tasksData.forEach(function (task) {
       if (task.task_id == id) {
-        sessionInfo.tag = task.task_tag;
-        sessionInfo.taskId = task.task_id;
+        setSessionTag(task.task_tag);
+        setSessionTaskId(task.task_id);
       }
     });
   };
   const sessionIntervalsHandle = function (e) {
-    sessionInfo.intervals = e.target.value;
+    setSessionInterval(e.target.value);
   };
   const sessionDescriptionHandle = function (e) {
-    sessionInfo.description = e.target.value;
+    setSessionDescription(e.target.value);
   };
 
-  const sessionSubmitHandle = function () {
-    sessionData.push(sessionInfo);
-    setSessionData([...sessionData]);
-    localStorage.setItem("sessionsData", JSON.stringify(sessionData));
+  const sessionSubmitHandle = function (e) {
+    e.preventDefault();
 
-    // update statsData for session in localStorage
-    statsData.sessions.totalSession += 1;
-    statsData.sessions.totalIntervals += Number(sessionInfo.intervals);
-    const avgIntervals =
-      statsData.sessions.totalIntervals / statsData.sessions.totalSession;
-    statsData.sessions.avgIntervals = avgIntervals.toFixed(1);
+    let valid = true;
+    const errors = [];
+    setErrorMessage(errors);
 
-    const updatedStatsData = [];
-    updatedStatsData.push(statsData);
-    localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
+    // checking for form errors
+    if (sessionTitle === "") {
+      errors.push("You need to enter a Session Name");
+      valid = false;
+    }
+    if (sessionActiveTime === "") {
+      errors.push("Active Time should be a valid number");
+      valid = false;
+    }
+    if (parseInt(sessionActiveTime) < 1) {
+      errors.push("Active Time can't be less than 1 min");
+      valid = false;
+    }
+    if (parseInt(sessionActiveTime) > 120) {
+      errors.push("Active Time can't be more than 120 mins ;)");
+      valid = false;
+    }
+
+    if (sessionShortBreak === "") {
+      errors.push("Short Break should be a valid number");
+      valid = false;
+    }
+    if (parseInt(sessionShortBreak) < 1) {
+      errors.push("Short Break can't be less than 1 min");
+      valid = false;
+    }
+    if (parseInt(sessionShortBreak) > 60) {
+      errors.push("Short Break can't be more than 60 mins");
+      valid = false;
+    }
+
+    if (sessionLongBreak === "") {
+      errors.push("Long Break should be a valid number");
+      valid = false;
+    }
+    if (parseInt(sessionLongBreak) < 1) {
+      errors.push("Long Break can't be less than 1 min");
+      valid = false;
+    }
+    if (parseInt(sessionLongBreak) > 120) {
+      errors.push("Long Break can't be more than 120 mins");
+      valid = false;
+    }
+
+    if (sessionTask === "") {
+      errors.push("You need to choose a Task");
+      valid = false;
+    }
+
+    if (sessionInterval === "") {
+      errors.push("Session Interval should be a valid number");
+      valid = false;
+    }
+
+    if (parseInt(sessionInterval) < 1) {
+      errors.push("Session Interval can't be less than 1");
+      valid = false;
+    }
+    if (parseInt(sessionInterval) > 15) {
+      errors.push("Session Interval can't be more than 15 ;)");
+      valid = false;
+    }
+
+    if (valid === true) {
+      const sessionInfo = {};
+      sessionInfo.id = Math.random() * 100;
+      sessionInfo.title = sessionTitle;
+      sessionInfo.activeTime = sessionActiveTime;
+      sessionInfo.shortBreak = sessionShortBreak;
+      sessionInfo.longBreak = sessionLongBreak;
+      sessionInfo.task = sessionTask;
+      sessionInfo.intervals = sessionInterval;
+      sessionInfo.description = sessionDescription;
+      sessionInfo.tag = sessionTag;
+      sessionInfo.taskId = sessionTaskId;
+      sessionInfo.isStarted = false;
+      sessionInfo.isFinished = false;
+      sessionInfo.currentInterval = 0;
+
+      sessionData.push(sessionInfo);
+      setSessionData([...sessionData]);
+      localStorage.setItem("sessionsData", JSON.stringify(sessionData));
+
+      // update statsData for session in localStorage
+      statsData.sessions.totalSession += 1;
+      statsData.sessions.totalIntervals += Number(sessionInfo.intervals);
+      const avgIntervals =
+        statsData.sessions.totalIntervals / statsData.sessions.totalSession;
+      statsData.sessions.avgIntervals = avgIntervals.toFixed(1);
+
+      const updatedStatsData = [];
+      updatedStatsData.push(statsData);
+      localStorage.setItem("statsData", JSON.stringify(updatedStatsData));
+      setCreateSession("");
+
+      return;
+    }
+
+    setErrorMessage(errors);
   };
 
   return (
     <div className="task-create">
       <header className="session-create__header">
         <h4 className="session-create__heading">Create Session</h4>
-        <Link to="/pomodoro/session-manager">
+        <a href="javascript:void(0)" onClick={closeButtonHandle}>
           <CloseIcon className="close-icon" />
-        </Link>
+        </a>
       </header>
+
+      <ul className="errors">
+        {errorMessage.map(function (error) {
+          return <li className="errors__message">{error}</li>;
+        })}
+      </ul>
 
       <form className="session-create__form">
         <label htmlFor="stitle" className="session-create__form__label">
-          Session Title
+          Session Title <span className="important-asterisk">*</span>
         </label>
         <input
           type="text"
@@ -98,7 +200,8 @@ function CreateSession({ sessionData, setSessionData }) {
         />
 
         <label htmlFor="sstudytime" className="session-create__form__label">
-          Active Time <span className="light-italic">(in minutes)</span>
+          Active Time <span className="light-italic">(in minutes)</span>{" "}
+          <span className="important-asterisk">*</span>
         </label>
         <input
           type="number"
@@ -115,7 +218,8 @@ function CreateSession({ sessionData, setSessionData }) {
           htmlFor="sshortbreaktime"
           className="session-create__form__label"
         >
-          Short Break Time <span className="light-italic">(in minutes)</span>
+          Short Break Time <span className="light-italic">(in minutes)</span>{" "}
+          <span className="important-asterisk">*</span>
         </label>
 
         <input
@@ -130,7 +234,8 @@ function CreateSession({ sessionData, setSessionData }) {
         />
 
         <label htmlFor="slongbreaktime" className="session-create__form__label">
-          Long Break Time <span className="light-italic">(in minutes)</span>
+          Long Break Time <span className="light-italic">(in minutes)</span>{" "}
+          <span className="important-asterisk">*</span>
         </label>
 
         <input
@@ -145,7 +250,7 @@ function CreateSession({ sessionData, setSessionData }) {
         />
 
         <label htmlFor="stask" className="session-create__form__label">
-          Task
+          Task <span className="important-asterisk">*</span>
         </label>
         <select
           name="sessiontask"
@@ -168,7 +273,7 @@ function CreateSession({ sessionData, setSessionData }) {
           )}
         </select>
         <label htmlFor="sintervals" className="session-create__form__label">
-          Number of Intervals
+          Number of Intervals <span className="important-asterisk">*</span>
         </label>
         <input
           type="number"
@@ -199,9 +304,9 @@ function CreateSession({ sessionData, setSessionData }) {
           type="submit"
           onClick={sessionSubmitHandle}
         >
-          <Link to="/pomodoro/session-manager" class="input__button__link">
+          <a href="javascript:void(0)" class="input__button__link">
             <h4>Create Session</h4>
-          </Link>
+          </a>
         </button>
       </form>
     </div>

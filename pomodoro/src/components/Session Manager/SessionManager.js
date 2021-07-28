@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
+import reverseArray from "../functions/reverseArray";
+
 import AddIcon from "@material-ui/icons/Add";
 import CreateSession from "./CreateSession";
 import SessionCard from "./SessionCard";
 import EmptyTasks from "../Task Manager/EmptyTasks";
-import TimerPage from "../Timer Page/TimerPage";
 
 import RegularShowReading from "../../images/Rigby-reading.png";
 
@@ -18,28 +19,36 @@ function SessionManager({ currentSession, setCurrentSession }) {
     ]);
   }, []);
 
+  const [createSession, setCreateSession] = useState("");
+
+  const renderCreateSession = function () {
+    setCreateSession(
+      <CreateSession
+        sessionData={sessionData}
+        setSessionData={setSessionData}
+        setCreateSession={setCreateSession}
+      />
+    );
+  };
+
   return (
     <Router>
       <div className="task-manager">
         <div className="task-section">
           <header className="task-section__header">
             <h2 className="heading">Sessions</h2>
-            <Link
-              to="/pomodoro/session-manager/create-session"
+            <a
+              href="javascript:void(0)"
               className="add-task"
+              onClick={renderCreateSession}
             >
               <h4>New Session</h4>
               <AddIcon className="add-task__icon" />
-            </Link>
+            </a>
           </header>
-          <Switch>
-            <Route path="/pomodoro/session-manager/create-session">
-              <CreateSession
-                sessionData={sessionData}
-                setSessionData={setSessionData}
-              />
-            </Route>
-          </Switch>
+
+          {createSession}
+
           {sessionData.length === 0 ? (
             <EmptyTasks
               image={RegularShowReading}
@@ -49,7 +58,7 @@ function SessionManager({ currentSession, setCurrentSession }) {
             />
           ) : (
             <ul class="task-list">
-              {sessionData.map(function (session) {
+              {reverseArray(sessionData).map(function (session) {
                 return (
                   <SessionCard
                     session={session}

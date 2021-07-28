@@ -30,3 +30,16 @@
     }
   }
 }
+
+// for desktops
+@media (min-width: 1200px) {
+  .current-task {
+    &__heading {
+      font-size: 1.5rem;
+    }
+
+    &__name {
+      font-size: 1rem;
+    }
+  }
+}

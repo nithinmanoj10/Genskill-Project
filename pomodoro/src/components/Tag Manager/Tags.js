@@ -1,7 +1,8 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+
+import reverseArray from "../functions/reverseArray";
 
 import AddIcon from "@material-ui/icons/Add";
 import CreateTag from "./CreateTag";
@@ -13,37 +14,41 @@ import RegularShowPoint from "../../images/Mordecai-Rigby-pointing.png";
 function Tags() {
   const [tagColour, setTagColour] = useState("#000");
   const [tagName, setTagName] = useState("");
+  const [createTag, setCreateTag] = useState("");
 
   const tagsData = JSON.parse(localStorage.getItem("tagsData") || "[]");
   const [tagData, setTagData] = useState([...tagsData]);
+
+  const renderCreateTag = function () {
+    setCreateTag(
+      <CreateTag
+        setTagData={setTagData}
+        tagData={tagData}
+        setCreateTag={setCreateTag}
+      />
+    );
+  };
 
   return (
     <Router>
       <div className="task-section">
         <header className="task-section__header">
           <h2 className="heading">Tags</h2>
-          <Link to="/task-manager/tags/create-tag" className="add-task">
+          <a
+            href="javascript:void(0)"
+            className="add-task"
+            onClick={renderCreateTag}
+          >
             <h4>New Tag</h4>
             <AddIcon className="add-task__icon" />
-          </Link>
+          </a>
         </header>
         <p className="warning">
           Recommended that you don't delete any tags and you choose a dark
           colour
         </p>
 
-        <Switch>
-          <Route path="/task-manager/tags/create-tag">
-            <CreateTag
-              tagColour={tagColour}
-              setTagColour={setTagColour}
-              tagName={tagName}
-              setTagName={setTagName}
-              setTagData={setTagData}
-              tagData={tagData}
-            />
-          </Route>
-        </Switch>
+        {createTag}
 
         {tagsData.length === 0 ? (
           <EmptyTasks
@@ -54,7 +59,7 @@ function Tags() {
           />
         ) : (
           <div className="tag-gallery">
-            {tagData.map(function (data) {
+            {reverseArray(tagData).map(function (data) {
               return (
                 <TagCard
                   name={data.name}

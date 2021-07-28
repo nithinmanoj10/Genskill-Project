@@ -86,3 +86,13 @@
     }
   }
 }
+
+// for desktops
+@media (min-width: 1200px) {
+  .timerpage {
+    &__buttons {
+      margin-top: 0px;
+      width: 40%;
+    }
+  }
+}

@@ -29,3 +29,17 @@
     }
   }
 }
+
+// for desktops
+@media (min-width: 1200px) {
+  .timer {
+    margin: 80px 0 5px 0;
+    &__value {
+      font-size: 5rem;
+    }
+
+    &__session {
+      font-size: 1rem;
+    }
+  }
+}

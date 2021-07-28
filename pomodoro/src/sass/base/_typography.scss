@@ -61,3 +61,23 @@ h4 {
 .light-grey-text {
   color: var(--col-text-grey);
 }
+
+.errors {
+  padding: 10px 35px;
+  padding-bottom: 0;
+
+  list-style-type: disc;
+
+  &__message {
+    font-size: 0.9rem;
+    margin: 8px 0;
+
+    color: var(--col-primary-dark-pink);
+    font-weight: 400;
+    // font-style: italic;
+  }
+}
+
+.important-asterisk {
+  color: var(--col-primary-dark-pink);
+}

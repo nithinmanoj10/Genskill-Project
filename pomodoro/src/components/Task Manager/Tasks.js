@@ -2,17 +2,19 @@ import React, { Component, useEffect, useState } from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+import reverseArray from "../functions/reverseArray";
+
 import CreateTask from "./CreateTask";
 import AddIcon from "@material-ui/icons/Add";
 import TaskCard from "./TaskCard";
 import EmptyTasks from "./EmptyTasks";
 
 import RegularShowEnjoy from "../../images/Mordecai-Rigby-enjoying.png";
-import CreateTag from "../Tag Manager/CreateTag";
 
 function Tasks() {
   const tasksData = JSON.parse(localStorage.getItem("tasksData") || "[]");
   const [tasks, setTasks] = useState([...tasksData]);
+  const [createTask, setCreateTask] = useState("");
 
   const pendingTasks = tasksData.filter((task) => {
     if (task.task_isCompleted == false) {
@@ -20,8 +22,8 @@ function Tasks() {
     }
   });
 
-  const submitTaskHandle = function (Data) {
-    setTasks([...Data]);
+  const renderCreateTask = function () {
+    setCreateTask(<CreateTask tasks={tasks} setCreateTask={setCreateTask} />);
   };
 
   return (
@@ -29,17 +31,17 @@ function Tasks() {
       <div className="task-section">
         <header className="task-section__header">
           <h2 className="heading">Tasks</h2>
-          <Link to="/task-manager/tasks/create-task" className="add-task">
+          <a
+            href="javascript:void(0)"
+            className="add-task"
+            onClick={renderCreateTask}
+          >
             <h4>New Task</h4>
             <AddIcon className="add-task__icon" />
-          </Link>
+          </a>
         </header>
 
-        <Switch>
-          <Route path="/task-manager/tasks/create-task">
-            <CreateTask submitTaskHandle={submitTaskHandle} tasks={tasks} />
-          </Route>
-        </Switch>
+        {createTask}
 
         {pendingTasks.length == 0 ? (
           <EmptyTasks
@@ -50,7 +52,7 @@ function Tasks() {
           />
         ) : (
           <ul className="task-list">
-            {tasks.map((task) => {
+            {reverseArray(tasks).map((task) => {
               if (task.task_isCompleted == false) {
                 return (
                   <TaskCard
