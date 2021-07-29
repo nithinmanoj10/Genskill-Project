@@ -14,7 +14,7 @@
 
 <p>First things first, let's create some tags. It can be any specific activity like studying, exercising, work, etc. It will help you keep track of your tasks. You can choose any color you want to match your tag.</p>
 
-1. Go to menu
+1. Go to menu (top right corner)
 2. Select Tags
 3. Click New Tag
 4. Enter a suitable tag name
