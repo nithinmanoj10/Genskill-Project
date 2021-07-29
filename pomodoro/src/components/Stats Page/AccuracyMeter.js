@@ -27,18 +27,18 @@ function AccuracyMeter(props) {
 
   return (
     <div className="accuracy-meter">
-      <h1 className="accuracy-meter__value">
+      <h2 className="accuracy-meter__value">
         {accuracy}
         {accuracy == "N/A" ? "" : "%"}
-      </h1>
+      </h2>
       <Doughnut
         // defaults={{
         //   layout: {
         //     padding: 10,
         //   },
         // }}
-        height={250}
-        width={250}
+        height={225}
+        width={225}
         // data={{
         //   labels: tagLabels,
         //   datasets: [

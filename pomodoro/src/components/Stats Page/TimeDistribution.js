@@ -21,8 +21,8 @@ function TimeDistribution() {
         //     padding: 10,
         //   },
         // }}
-        height={250}
-        width={300}
+        height={100}
+        // width={100}
         // data={{
         //   labels: tagLabels,
         //   datasets: [
@@ -65,7 +65,7 @@ function TimeDistribution() {
             {
               data: totalHours,
               backgroundColor: ["#fc9686"],
-              borderWidth: 1,
+              borderWidth: 0,
             },
           ],
         }}
@@ -88,6 +88,7 @@ function TimeDistribution() {
               },
             },
           },
+          maintainAspectRatio: false,
           responsive: true,
           layout: {
             padding: 0,

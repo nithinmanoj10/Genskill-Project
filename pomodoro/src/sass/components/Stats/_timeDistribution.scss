@@ -1,9 +1,37 @@
-.time-distribution {
+.graph-wrapper {
+  height: 250px;
+  // width: 300px;
+
+  // position: absolute;
+  grid-column: 1/-1;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
 
-  grid-column: 1/-1;
-  margin: 0 10px;
-  margin-top: 25px;
+  .time-distribution {
+    // width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1/-1;
+    margin: 0 10px;
+    margin-top: 25px;
+
+    height: 225px;
+    width: 85%;
+  }
+}
+
+// for tablets
+@media (min-width: 750px) {
+  .graph-wrapper {
+    height: 175px;
+
+    .time-distribution {
+      height: 150px;
+    }
+  }
 }

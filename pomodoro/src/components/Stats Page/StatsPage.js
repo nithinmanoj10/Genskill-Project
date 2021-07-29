@@ -13,6 +13,7 @@ import PieChartIcon from "@material-ui/icons/PieChart";
 import AccuracyMeter from "./AccuracyMeter";
 import TrackChangesIcon from "@material-ui/icons/TrackChanges";
 import TimeDistribution from "./TimeDistribution";
+import EqualizerIcon from "@material-ui/icons/Equalizer";
 
 function StatsPage() {
   const [hasStats, setHasStats] = useState(true);
@@ -99,12 +100,17 @@ function StatsPage() {
 
       {hasStats === true ? (
         <div className="stats-grid">
-          <div className="stats-card" id="tag-distribution">
+          <div className="stats-card" id="time-distribution">
             <header className="stats-card__header">
-              <PieChartIcon style={iconStyles} />
-              <h2 className="stats-card__header__heading">Tag Distribution</h2>
+              <EqualizerIcon style={iconStyles} />
+              <h2 className="stats-card__header__heading">Time Distribution</h2>
             </header>
-            <TimeDistribution />
+            <p className="stats-card__header__info">
+              Normalised Distribution of when you are active throughout the day
+            </p>
+            <div className="graph-wrapper">
+              <TimeDistribution />
+            </div>
           </div>
 
           <div className="stats-card" id="tag-distribution">
