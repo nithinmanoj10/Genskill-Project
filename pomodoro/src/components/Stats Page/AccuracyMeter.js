@@ -32,24 +32,8 @@ function AccuracyMeter(props) {
         {accuracy == "N/A" ? "" : "%"}
       </h2>
       <Doughnut
-        // defaults={{
-        //   layout: {
-        //     padding: 10,
-        //   },
-        // }}
         height={225}
         width={225}
-        // data={{
-        //   labels: tagLabels,
-        //   datasets: [
-        //     {
-        //       data: tagTime,
-        //       backgroundColor: tagColours,
-        //       borderColor: tagBorderColours,
-        //       borderWidth: 1,
-        //     },
-        //   ],
-        // }}
         data={{
           labels: ["", ""],
           datasets: [

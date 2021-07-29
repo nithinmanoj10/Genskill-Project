@@ -16,24 +16,7 @@ function TimeDistribution() {
   return (
     <div className="time-distribution">
       <Bar
-        // defaults={{
-        //   layout: {
-        //     padding: 10,
-        //   },
-        // }}
         height={100}
-        // width={100}
-        // data={{
-        //   labels: tagLabels,
-        //   datasets: [
-        //     {
-        //       data: tagTime,
-        //       backgroundColor: tagColours,
-        //       borderColor: tagBorderColours,
-        //       borderWidth: 1,
-        //     },
-        //   ],
-        // }}
         data={{
           labels: [
             "0",

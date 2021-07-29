@@ -8,7 +8,7 @@
   .close-warning {
     background-color: var(--col-primary-white);
     padding: 30px 20px;
-    width: 80%;
+    width: 300px;
 
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 15px;
@@ -30,7 +30,7 @@
     }
 
     &__action {
-      width: 50%;
+      width: 160px;
       margin: 30px auto 0px;
 
       display: flex;

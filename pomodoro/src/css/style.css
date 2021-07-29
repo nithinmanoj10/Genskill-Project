@@ -1090,7 +1090,7 @@ h4 {
 .overlay .close-warning {
   background-color: var(--col-primary-white);
   padding: 30px 20px;
-  width: 80%;
+  width: 300px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 15px;
   display: flex;
@@ -1111,7 +1111,7 @@ h4 {
 }
 
 .overlay .close-warning__action {
-  width: 50%;
+  width: 160px;
   margin: 30px auto 0px;
   display: flex;
   justify-content: space-between;
@@ -1310,7 +1310,7 @@ h4 {
   grid-column: 1/-1;
   margin: 0 10px;
   margin-top: 25px;
-  height: 225px;
+  height: 210px;
   width: 85%;
 }
 
@@ -1390,6 +1390,17 @@ h4 {
 
 .side-drawer__name {
   text-align: center;
+}
+
+.side-drawer__rick-roll {
+  display: flex;
+  align-items: center;
+}
+
+.side-drawer__rick-roll__link {
+  font-size: 0.8rem;
+  color: var(--col-text-light-grey);
+  margin-left: 2px;
 }
 
 .side-drawer .empty-space {

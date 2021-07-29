@@ -6,6 +6,7 @@ import MenuBookIcon from "@material-ui/icons/MenuBook";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
 import BarChartIcon from "@material-ui/icons/BarChart";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 import ProductivePerson from "../../images/illustration-woman-online-mobile.svg";
 
@@ -13,6 +14,11 @@ function SideDrawer(props) {
   const iconStyles = {
     fontSize: 21,
     fill: "#707070",
+  };
+
+  const iconStylesLight = {
+    fontSize: 21,
+    fill: "#b8b8b8",
   };
 
   const activeIconStyles = {
@@ -128,6 +134,16 @@ function SideDrawer(props) {
         className="side-drawer__image"
       />
       <h1 className="side-drawer__name">Pomodoro</h1>
+      <div className="side-drawer__rick-roll">
+        <YouTubeIcon style={iconStylesLight} />
+        <a
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          className="side-drawer__rick-roll__link"
+          target="_blank"
+        >
+          Support me on YouTube
+        </a>
+      </div>
     </div>
   );
 }

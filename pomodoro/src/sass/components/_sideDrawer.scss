@@ -72,6 +72,17 @@
     text-align: center;
   }
 
+  &__rick-roll {
+    display: flex;
+    align-items: center;
+
+    &__link {
+      font-size: 0.8rem;
+      color: var(--col-text-light-grey);
+      margin-left: 2px;
+    }
+  }
+
   .empty-space {
     flex: 1;
   }
