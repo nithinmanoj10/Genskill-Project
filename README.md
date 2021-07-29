@@ -23,4 +23,6 @@
 
 _Deleting a tag will result in losing any data related to that tag_
 
+![Creating-A-Tag](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/create%20tag.png?raw=true)
+
 ## Creating Tasks
