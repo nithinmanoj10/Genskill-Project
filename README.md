@@ -6,10 +6,6 @@
 
 # How to use
 
-## Table of Contents
-
-- [Creating Tags <a name="create-tag"></a>](#creating-tags-)
-
 ## Creating Tags <a name="create-tag"></a>
 
 <p>First things first, let's create some tags. It can be any specific activity like studying, exercising, work, etc. It will help you keep track of your tasks. You can choose any color you want to match your tag.</p>
