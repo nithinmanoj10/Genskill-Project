@@ -23,7 +23,7 @@
   - [Design Inspiration](#design-inspiration)
   - [Tutorials](#tutorials)
   - [Image Sources](#image-sources)
-  - [Others](#others)
+  - [Other Pomodoro Apps](#other-pomodoro-apps)
 
 # How to use
 
@@ -85,7 +85,7 @@ _You need to create a session first to access its timer page_
 1. Go to menu
 2. Select Sessions
 3. Select any created session
-4. Choose whether you want active / short break/ long break timer
+4. Choose whether you want active/short break/long break timer
 5. Start the timer
 
 _If you go back during the timer is running, you might lose progress for that interval_
@@ -110,15 +110,15 @@ _You can start viewing your stats once you finish a task._
 
 # Project Status
 
-<p>The frontend of this project is complete for now. The backend is still in progress.</p>
+<p>The frontend of this project is complete. The backend is still in progress. But everything is still functional for now.</p>
 
 <p>The browsers local storage was used to store the users data. A functional database and backend will be implemented as soon as possible</p>
 
 ### Upcoming Features
 
-1. Login / Sign Up Page
+1. Login/Sign Up Page
 2. How To Use section for new users
-3. Ability to edit task / session details.
+3. Ability to edit task/session details.
 
 # Inspiration and Sources
 
@@ -141,6 +141,6 @@ _You can start viewing your stats once you finish a task._
 1. [Regular Show Images](https://www.cleanpng.com/free/regular-show.html)
 2. [FrontEnd Mentor Vector Images](https://www.frontendmentor.io/challenges)
 
-### Others
+### Other Pomodoro Apps
 
 1. [Pomofocus.io](https://pomofocus.io/)

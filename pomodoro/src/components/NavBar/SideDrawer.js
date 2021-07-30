@@ -141,7 +141,7 @@ function SideDrawer(props) {
           className="side-drawer__rick-roll__link"
           target="_blank"
         >
-          Support me on YouTube
+          Check this out
         </a>
       </div>
     </div>
