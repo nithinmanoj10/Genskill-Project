@@ -1,4 +1,4 @@
-![Javascript-badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E?raw=true) ![React-badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB?raw=true)
+<!-- ![Javascript-badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E?raw=true) ![React-badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB?raw=true) -->
 
 ![Pomodoro Logo](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/Pomodoro%20logo.png?raw=true)
 
@@ -16,6 +16,13 @@
   - [Creating Sessions](#creating-sessions)
   - [Viewing Stats](#viewing-stats)
 - [Technologies Used](#technologies-used)
+- [Project Status](#project-status)
+  - [Upcoming Features](#upcoming-features)
+- [Inspiration and Sources](#inspiration-and-sources)
+  - [Design Inspiration](#design-inspiration)
+  - [Tutorials](#tutorials)
+  - [Image Sources](#image-sources)
+  - [Others](#others)
 
 # How to use
 
@@ -81,3 +88,40 @@ _You can start viewing your stats once you finish a task._
 # Technologies Used
 
 ![Programmin-Languages-Used](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/programming%20langauges.png?raw=true)
+
+# Project Status
+
+<p>The frontend of this project is complete for now. The backend is still in progress.</p>
+
+<p>The browsers local storage was used to store the users data. A functional database and backend will be implemented as soon as possible</p>
+
+### Upcoming Features
+
+1. Login / Sign Up Page
+2. How To Use section for new users
+3. Ability to edit task / session details.
+
+# Inspiration and Sources
+
+### Design Inspiration
+
+1. [Home Page](https://dribbble.com/shots/14631279-Welcome-screen-timer?utm_source=Clipboard_Shot&utm_campaign=droid&utm_content=Welcome%20screen%20%2B%20timer&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=droid&utm_content=Welcome%20screen%20%2B%20timer&utm_medium=Social_Share)
+2. [Timer Page](https://dribbble.com/shots/5469622-Productivity-timer?utm_source=Clipboard_Shot&utm_campaign=droid&utm_content=Productivity%20timer&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=droid&utm_content=Productivity%20timer&utm_medium=Social_Share)
+3. [Nav Bar](https://dribbble.com/shots/15307679-Sidebar-Navigation-Tooltip-Exploration?utm_source=Clipboard_Shot&utm_campaign=dawidpietrasiak&utm_content=Sidebar%20Navigation%20-%20Tooltip%20Exploration&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=dawidpietrasiak&utm_content=Sidebar%20Navigation%20-%20Tooltip%20Exploration&utm_medium=Social_Share)
+
+### Tutorials
+
+1. [Build a Todo App with React](https://youtu.be/pCA4qpQDZD8)
+2. [Build A Pomodoro Clock In React](https://youtu.be/9EVmiQCfkuQ)
+3. [ReactJS - Build a Responsive Navigation Bar](https://youtu.be/l6nmysZKHFU)
+4. [React Router](https://youtu.be/Law7wfdg_ls)
+5. [Deploy React Apps to GitHub pages](https://youtu.be/1wDzEjXbblM)
+
+### Image Sources
+
+1. [Regular Show Images](https://www.cleanpng.com/free/regular-show.html)
+2. [FrontEnd Mentor Vector Images](https://www.frontendmentor.io/challenges)
+
+### Others
+
+1. [Pomofocus.io](https://pomofocus.io/)
