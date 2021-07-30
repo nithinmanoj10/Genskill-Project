@@ -1,3 +1,5 @@
+![Javascript-badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E?raw=true) ![React-badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB?raw=true)
+
 ![Pomodoro Logo](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/Pomodoro%20logo.png?raw=true)
 
 # Create your tasks and get them done - all in one place
@@ -13,7 +15,7 @@
   - [Creating Tasks](#creating-tasks)
   - [Creating Sessions](#creating-sessions)
   - [Viewing Stats](#viewing-stats)
-- [Programming Languages Used](#programming-languages-used)
+- [Technologies Used](#technologies-used)
 
 # How to use
 
@@ -76,6 +78,6 @@ _You can start viewing your stats once you finish a task._
 1. Go to menu
 2. Select Stats
 
-# Programming Languages Used
+# Technologies Used
 
 ![Programmin-Languages-Used](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/programming%20langauges.png?raw=true)
