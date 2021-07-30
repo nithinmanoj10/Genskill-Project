@@ -40,3 +40,19 @@ _You need to create a tag first before you can create any tasks_
 <p>Estimated Intervals are the number of intervals you might use to complete this task. An interval is the active block of time in the Pomodoro technique. Later in the stats section, you can check if you're good at guessing the number of intervals required to finish a task.</p>
 
 ![Create-a-task](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/create%20task.png?raw=true)
+
+## Creating Sessions
+
+<p>For each session, you can choose a task you want to complete and follow the Pomodoro technique. You need not stick with the 25/5 Pomodoro timer; you can select the active and break times you are most comfortable with.</p>
+
+_You need to create a task first before you can create any sessions_
+
+1. Go to menu
+2. Select Sessions
+3. Click New Session
+4. Enter the required details
+5. Submit Create Session
+
+<p>Try taking a short break after every interval and a long break after every four intervals. It is up to you :)</p>
+
+<p>If after a session is over and you still haven't completed the task, you can create a new session for the same task and continue where you have left off.</p>
