@@ -81,7 +81,6 @@ function Timer(props) {
               const tagsData = JSON.parse(localStorage.getItem("tagsData"));
 
               const updatedTagsData = tagsData.map(function (tag) {
-                console.log(tag, currentSession);
                 if (tag.name === currentSession.tag) {
                   // updating totalActiveTime in localStorage
                   statsData.time.totalActiveTime += sessionTime;
@@ -107,7 +106,6 @@ function Timer(props) {
                   }
 
                   const updatedStatsData = [];
-                  console.log(totalHours);
                   statsData.time.totalHours = totalHours;
                   updatedStatsData.push(statsData);
                   localStorage.setItem(

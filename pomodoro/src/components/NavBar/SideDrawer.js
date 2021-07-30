@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import HomeIcon from "@material-ui/icons/Home";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
@@ -27,7 +27,6 @@ function SideDrawer(props) {
   };
 
   const location = useLocation().pathname;
-  console.log(location);
 
   return (
     <div className={`side-drawer ${props.styles}`}>
