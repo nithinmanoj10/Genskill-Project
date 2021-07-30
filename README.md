@@ -102,6 +102,8 @@ _You can start viewing your stats once you finish a task._
 1. Go to menu
 2. Select Stats
 
+_To view Interval Estimation Accuracy, you need to complete atleast one task_
+
 ![stats](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/stats.png?raw=true)
 
 # Technologies Used

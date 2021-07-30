@@ -28,8 +28,8 @@ function AccuracyMeter(props) {
   return (
     <div className="accuracy-meter">
       <h2 className="accuracy-meter__value">
-        {accuracy}
-        {accuracy == "N/A" ? "" : "%"}
+        {accuracy == NaN ? "N/A" : accuracy}
+        {accuracy == NaN ? "" : "%"}
       </h2>
       <Doughnut
         height={225}
