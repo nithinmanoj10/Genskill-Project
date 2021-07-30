@@ -29,6 +29,8 @@ _Deleting a tag will result in losing any data related to that tag_
 
 <p>Creating a task is really easy</p>
 
+_You need to create a tag first before you can create any tasks_
+
 1. Go to menu
 2. Select Tasks
 3. Click New Tasks
@@ -37,4 +39,4 @@ _Deleting a tag will result in losing any data related to that tag_
 
 <p>Estimated Intervals are the number of intervals you might use to complete this task. An interval is the active block of time in the Pomodoro technique. Later in the stats section, you can check if you're good at guessing the number of intervals required to finish a task.</p>
 
-_You need to create a tag first before you can create any tasks_
+![Create-a-task](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/create%20task.png?raw=true)
