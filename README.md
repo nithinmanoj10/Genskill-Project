@@ -4,6 +4,17 @@
 
 <p>Follow the classic "25 mins work / 5 mins break" timer to get all your important tasks done. Keep track of all of your tasks with this user-friendly Pomodoro app and get detailed stats about your productivity to keep you on the right track.</p>
 
+# Table of Contents
+
+- [Create your tasks and get them done - all in one place](#create-your-tasks-and-get-them-done---all-in-one-place)
+- [Table of Contents](#table-of-contents)
+- [How to use](#how-to-use)
+  - [Creating Tags <a name="create-tag"></a>](#creating-tags-)
+  - [Creating Tasks](#creating-tasks)
+  - [Creating Sessions](#creating-sessions)
+  - [Viewing Stats](#viewing-stats)
+- [Programming Languages Used](#programming-languages-used)
+
 # How to use
 
 ## Creating Tags <a name="create-tag"></a>
@@ -64,3 +75,7 @@ _You can start viewing your stats once you finish a task._
 
 1. Go to menu
 2. Select Stats
+
+# Programming Languages Used
+
+![Programmin-Languages-Used](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/programming%20langauges.png?raw=true)
