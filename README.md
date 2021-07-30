@@ -56,3 +56,15 @@ _You need to create a task first before you can create any sessions_
 <p>Try taking a short break after every interval and a long break after every four intervals. It is up to you :)</p>
 
 <p>If a session is over and you still haven't completed the task, you can create a new session for the same task and continue where you have left off.</p>
+
+![Create-a-task](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/create%20session.png?raw=true)
+
+## Viewing Stats
+
+<p>Who doesn't like stats?</p>
+<p>View detailed reports of how much time you spend on each tag, what time of the day you're the most active and many more</p>
+
+_You can start viewing your stats once you finish a task._
+
+1. Go to menu
+2. Select Stats
