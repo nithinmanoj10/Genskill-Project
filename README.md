@@ -14,6 +14,7 @@
   - [Creating Tags <a name="create-tag"></a>](#creating-tags-)
   - [Creating Tasks](#creating-tasks)
   - [Creating Sessions](#creating-sessions)
+  - [Using the Timer](#using-the-timer)
   - [Viewing Stats](#viewing-stats)
 - [Technologies Used](#technologies-used)
 - [Project Status](#project-status)
@@ -74,6 +75,20 @@ _You need to create a task first before you can create any sessions_
 <p>If a session is over and you still haven't completed the task, you can create a new session for the same task and continue where you have left off.</p>
 
 ![Create-a-task](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/create%20session.png?raw=true)
+
+## Using the Timer
+
+<p>You would choose the active time, short break and long break time when creating the session. You can follow any pattern you want. Short break after every interval and a long break after every four intervals is recommended.</p>
+
+_You need to create a session first to access its timer page_
+
+1. Go to menu
+2. Select Sessions
+3. Select any created session
+4. Choose whether you want active / short break/ long break timer
+5. Start the timer
+
+_If you go back during the timer is running, you might lose progress for that interval_
 
 ## Viewing Stats
 
