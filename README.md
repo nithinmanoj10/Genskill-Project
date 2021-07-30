@@ -55,4 +55,4 @@ _You need to create a task first before you can create any sessions_
 
 <p>Try taking a short break after every interval and a long break after every four intervals. It is up to you :)</p>
 
-<p>If after a session is over and you still haven't completed the task, you can create a new session for the same task and continue where you have left off.</p>
+<p>If a session is over and you still haven't completed the task, you can create a new session for the same task and continue where you have left off.</p>
