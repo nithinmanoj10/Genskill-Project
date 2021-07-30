@@ -8,8 +8,6 @@
 
 # Table of Contents
 
-- [Create your tasks and get them done - all in one place](#create-your-tasks-and-get-them-done---all-in-one-place)
-- [Table of Contents](#table-of-contents)
 - [How to use](#how-to-use)
   - [Creating Tags <a name="create-tag"></a>](#creating-tags-)
   - [Creating Tasks](#creating-tasks)
