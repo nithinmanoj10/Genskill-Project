@@ -8,6 +8,8 @@
 
 # Table of Contents
 
+- [Create your tasks and get them done - all in one place](#create-your-tasks-and-get-them-done---all-in-one-place)
+- [Table of Contents](#table-of-contents)
 - [How to use](#how-to-use)
   - [Creating Tags <a name="create-tag"></a>](#creating-tags-)
   - [Creating Tasks](#creating-tasks)
@@ -82,6 +84,8 @@ _You can start viewing your stats once you finish a task._
 
 1. Go to menu
 2. Select Stats
+
+![stats](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/stats.png?raw=true)
 
 # Technologies Used
 
