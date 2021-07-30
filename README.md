@@ -90,6 +90,8 @@ _You need to create a session first to access its timer page_
 
 _If you go back during the timer is running, you might lose progress for that interval_
 
+![timer-page](https://github.com/nithinmanoj10/Genskill-Project/blob/main/Design%20Images/timer%20page.png?raw=true)
+
 ## Viewing Stats
 
 <p>Who doesn't like stats?</p>
